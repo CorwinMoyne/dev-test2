@@ -1,9 +1,9 @@
 To use this seed project:
 =========================
 
-- Clone it with new name
+- Clone it with new name:
 
-- https://corwin_moyne@bitbucket.org/corwin_moyne/angular-php-seed.git johndalyandsons
+- git clone https://corwin_moyne@bitbucket.org/corwin_moyne/angular-php-seed.git johndalyandsons
 
 - Create a new project in BitBucket for your new app
 
@@ -17,7 +17,7 @@ To use this seed project:
 
 - git push
 
-You must run:
+In your new project run:
 =============
 
 - bower install
