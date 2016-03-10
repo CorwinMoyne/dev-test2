@@ -13,7 +13,9 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <!-- injector:css -->
     <link rel="stylesheet" href="styles/main.css">
+    <!-- endinjector -->
     <!-- endbuild -->
 </head>
 
@@ -68,8 +70,12 @@
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
+    <!-- moduleinjector:js -->
+    <script src="scripts/app.module.js"></script>
+    <!-- endmoduleinjector -->
+    <!-- injector:js -->
     <script src="scripts/main/main.controller.js"></script>
+    <!-- endinjector -->
     <!-- endbuild -->
 </body>
 

@@ -2,6 +2,8 @@ node_modules
 dist
 .tmp
 .sass-cache
+.tscache
 bower_components
 /app/scripts/**/**/*.js
+/app/scripts/**/**/*.js.map
 /test/spec/**/**/*.js
