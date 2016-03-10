@@ -15,3 +15,10 @@ git add .
 git commit -m"initial commit"
 
 git push
+
+You must run:
+
+bower install
+npm install
+tsd install
+make install --directory app/api (may fail. try again until it installs php dependencies)
