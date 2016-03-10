@@ -458,7 +458,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
-    'shell:phpTest',
+    // 'shell:phpTest',
     'concurrent:test',
     'autoprefixer',
     'connect:test',
@@ -467,7 +467,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'shell:phpUpdate',
+    // 'shell:phpUpdate',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
