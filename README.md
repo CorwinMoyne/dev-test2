@@ -8,4 +8,10 @@ https://corwin_moyne@bitbucket.org/corwin_moyne/angular-php-seed.git johndalyand
 
 3) cd into cloned project and change the remote url to your new BitBucket url:
 
-git remote set-url origin git://new.url.here
+git remote set-url origin https://....
+
+git add .
+
+git commit -m"initial commit"
+
+git push
