@@ -1,24 +1,26 @@
 To use this seed project:
+=========================
 
-1) Clone it with new name
+- Clone it with new name
 
-https://corwin_moyne@bitbucket.org/corwin_moyne/angular-php-seed.git johndalyandsons
+- https://corwin_moyne@bitbucket.org/corwin_moyne/angular-php-seed.git johndalyandsons
 
-2) Create a new project in BitBucket for your new app
+- Create a new project in BitBucket for your new app
 
-3) cd into cloned project and change the remote url to your new BitBucket url:
+- cd into cloned project and change the remote url to your new BitBucket url:
 
-git remote set-url origin https://....
+- git remote set-url origin https://....
 
-git add .
+- git add .
 
-git commit -m"initial commit"
+- git commit -m"initial commit"
 
-git push
+- git push
 
 You must run:
+=============
 
-bower install
-npm install
-tsd install
-make install --directory app/api (may fail. try again until it installs php dependencies)
+- bower install
+- npm install
+- tsd install
+- make install --directory app/api (may fail. try again until it installs php dependencies)
