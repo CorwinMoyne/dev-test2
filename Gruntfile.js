@@ -89,6 +89,14 @@ module.exports = function (grunt) {
         tasks: ['shell:phpTest']
       }
     },
+    
+    // grunt-ts
+    ts: {
+      default: {
+        src: ["app/**/*.ts", "test/spec/**/**/*.ts"],
+        reference: 'typings/_reference.ts'
+      }
+    },
 
     // The actual grunt server settings
     connect: {
@@ -441,6 +449,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'ts',
       'wiredep',
       'concurrent:server',
       'autoprefixer',
@@ -458,6 +467,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
+    'ts',
     // 'shell:phpTest',
     'concurrent:test',
     'autoprefixer',
@@ -467,6 +477,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'ts',
     // 'shell:phpUpdate',
     'wiredep',
     'useminPrepare',
