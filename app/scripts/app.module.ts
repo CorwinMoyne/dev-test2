@@ -6,6 +6,5 @@ module app {
     var requiredModules: any[] = [
         'ui.router'
     ];
-    
     angular.module('app', requiredModules);
 }
