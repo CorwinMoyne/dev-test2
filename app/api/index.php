@@ -2,11 +2,11 @@
 require 'vendor/autoload.php';
 $app = new \Slim\Slim();
 
-$app->get('/example', 'getExample');
+$app->get('/headstones', 'getHeadstones');
 $app->run();
 
-function getExample() {
-  $sql = "select * FROM exampleTable";
+function getHeadstones() {
+  $sql = "select * FROM headstone";
   try {
     $db = getConnection();
     $stmt = $db->query($sql);  
@@ -19,10 +19,10 @@ function getExample() {
 }
 
 function getConnection() {
-  $dbhost="";
-  $dbuser="root";
-  $dbpass="";
-  $dbname="";
+  $dbhost="www.db4free.net";
+  $dbuser="jdalyandsons";
+  $dbpass="Granlo.52";
+  $dbname="jdalyandsons";
   $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);  
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   return $dbh;

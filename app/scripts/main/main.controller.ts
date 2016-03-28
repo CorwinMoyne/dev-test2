@@ -8,7 +8,7 @@ module app {
         static $inject = ['$http'];
         constructor(
             private $http: ng.IHttpService) {
-            this.$http.get('/api/friends').then((response: any) => {
+            this.$http.get('/api/headstones').then((response: any) => {
                 console.log(response.data);
             });
         }
