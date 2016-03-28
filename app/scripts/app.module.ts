@@ -9,7 +9,9 @@ module app {
         'ngAnimate',
         'ngTouch',
         
-        'app.home'
+        'app.home',
+        'app.headstone',
+        'app.headstones'
     ];
     angular.module('app', requiredModules);
 }
