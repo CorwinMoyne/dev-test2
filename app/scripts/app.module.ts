@@ -3,8 +3,13 @@
 module app {
     'use strict';
 
-    var requiredModules: any[] = [
-        'ui.router'
+    var requiredModules: string[] = [
+        'ui.router',
+        'ui.bootstrap',
+        'ngAnimate',
+        'ngTouch',
+        
+        'app.home'
     ];
     angular.module('app', requiredModules);
 }

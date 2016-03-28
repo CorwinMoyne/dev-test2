@@ -3,6 +3,7 @@ require 'vendor/autoload.php';
 $app = new \Slim\Slim();
 
 $app->get('/headstones', 'getHeadstones');
+$app->get('/carousel', 'getCarouselImages');
 $app->run();
 
 function getHeadstones() {
@@ -10,11 +11,24 @@ function getHeadstones() {
   try {
     $db = getConnection();
     $stmt = $db->query($sql);  
-    $wines = $stmt->fetchAll(PDO::FETCH_OBJ);
+    $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     $db = null;
-    echo json_encode($wines);
+    echo json_encode($result);
   } catch(PDOException $e) {
     echo '{"error":{"text":'. $e->getMessage() .'}}'; 
+  }
+}
+
+function getCarouselImages() {
+  $sql = "SELECT * FROM carousel_image";
+  try {
+    $db = getConnection();
+    $stmt = $db->query($sql);  
+    $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+    $db = null;
+    echo json_encode($result);
+  } catch(PDOException $e) {
+    
   }
 }
 

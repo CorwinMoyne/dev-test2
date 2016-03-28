@@ -1,0 +1,37 @@
+body {
+    background-color: #f2f2f2;
+}
+
+/*navbar*/
+.navbar ul > li {
+    cursor: pointer;
+}
+
+/*main div on index page*/
+#main {
+    margin-top: 50px;
+}
+
+/*home page*/
+#home {
+     background-color: #f2f2f2;
+     border: solid 20px white;
+}
+#home-text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#carousel .right.carousel-control {
+    display: none;
+}
+#carousel .left.carousel-control {
+    display: none;
+}
+#carousel .carousel-indicators {
+    display: none;
+}
+#carousel .img-responsive {
+  height: 300px;
+  width: 100%;
+}
+
