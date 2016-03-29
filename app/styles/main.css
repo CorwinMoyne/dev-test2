@@ -35,3 +35,12 @@ body {
   width: 100%;
 }
 
+/*headstones thumbnail*/
+.thumbnail img {
+  width: 300px;
+  height: 200px;
+}
+.thumbnail .thumbnail-text {
+    color: black;
+}
+

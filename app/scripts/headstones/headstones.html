@@ -1,14 +1,15 @@
-Headstones.html
-
-
-<div>
-    <table>
-        <tr>
-            <td ng-repeat='headstones in vm.headstones'>
-                {{headstones.number}} <img class="img-responsive center-block" ng-src="{{headstones.image_path}}"height="250" width="200">{{headstones.description}}
-            </td>
-        </tr>
-    </table>
+<div class="container-fluid">
+	<div ng-repeat="headstones in vm.headstones">
+	   <div class="col-md-4 col-lg-3">
+			<a ng-click=""> 
+				<div class="thumbnail">
+					<img class="img-responsive" ng-src="{{headstones.image_path}}">
+					<div class="thumbnail-text">{{headstones.number}}. {{headstones.description}}</div>
+				</div>
+			</a>
+		</div>
+	</div>
 </div>
+
 
 

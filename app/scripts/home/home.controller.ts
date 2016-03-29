@@ -9,9 +9,7 @@ module app.home {
             'images'
         ];
         constructor(
-            public images) {
-            console.log('images', this.images);
-        }
+            public images) { }
     }
     angular.module('app.home').controller('app.home.HomeController', HomeController);
 }
