@@ -23,8 +23,10 @@ module app.headstones {
             })
     }
 
-    resolveHeadstones.$inject = [];
-    function resolveHeadstones(): ng.IPromise<any> {
-        return;
+    resolveHeadstones.$inject = ['app.headstones.HeadstonesService'];
+    function resolveHeadstones(headstonesService: app.headstones.IHeadstonesService): ng.IPromise<any> {
+         return headstonesService.getHeadstones().then((data) => {
+        return data;
+         });
     }
 }

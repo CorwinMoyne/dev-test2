@@ -4,7 +4,14 @@ module app.headstones {
     'use strict';
     
     class HeadstonesController {
-        constructor() {}
+        
+         static $inject = [
+            'headstones'
+        ];
+        constructor(
+            public headstones) {
+            console.log('headstones', this.headstones);
+        }
     }
-    angular.module('app.headstones').controller('app.headstones.HeadstonesController');
+    angular.module('app.headstones').controller('app.headstones.HeadstonesController', HeadstonesController);
 }
