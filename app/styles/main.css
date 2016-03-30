@@ -1,3 +1,4 @@
+/*header*/
 #header .navbar {
     height: 120px;
     background-color: #302f2f;
@@ -13,6 +14,7 @@
     text-align: center;
 }
 
+/*body*/
 body {
     background-color: #f2f2f2;
 }
@@ -45,26 +47,44 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-#carousel .right.carousel-control {
-    display: none;
-}
-#carousel .left.carousel-control {
-    display: none;
-}
-#carousel .carousel-indicators {
-    display: none;
-}
-#carousel .img-responsive {
-  height: 300px;
-  width: 100%;
-}
 
 /*headstones thumbnail*/
-.thumbnail img {
-  width: 300px;
-  height: 200px;
+.thumbnail .img-responsive {
+    width: 300px;
+    height: 200px;
 }
 .thumbnail .thumbnail-text {
     color: black;
 }
+
+/*headstones modal*/
+#headstones-modal #modal-glyphicon {
+    text-align: right;
+}
+#headstones-modal #modal-glyphicon a {
+    color: #cbad5d;
+}
+#headstones-modal #carousel .img-responsive {
+    height: 450px;
+    width: auto;
+    margin:auto;
+}
+#headstones-modal h3 {
+    color: black;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+#headstones-modal .right.carousel-control {
+    color: #cbad5d;
+}
+#headstones-modal .left.carousel-control {
+    color: #cbad5d;
+}
+#headstones-modal .carousel-indicators li {
+    background-color: #cbad5d;
+}
+#headstones-modal .carousel-indicators .active {
+    background-color: #302f2f;
+}
+
 
