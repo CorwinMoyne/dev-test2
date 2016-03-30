@@ -4,6 +4,7 @@
     background-color: #302f2f;
     color: white;
     font-size: 1.1em;
+    border-bottom: solid 1px white;
 }
 #header .navbar #tel {
     margin-top: 30px;
