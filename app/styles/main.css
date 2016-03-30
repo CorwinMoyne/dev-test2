@@ -26,7 +26,7 @@ body {
     cursor: pointer;
 }
 #main-nav .navbar-default .navbar-nav .active a {
-    color: black;
+    color: #302f2f;
     background-color: #cbad5d;
     font-weight: bold;
 }
