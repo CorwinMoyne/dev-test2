@@ -11,7 +11,8 @@ module app {
         
         'app.home',
         'app.headstone',
-        'app.headstones'
+        'app.headstones',
+        'app.contact'
     ];
     angular.module('app', requiredModules);
 }
