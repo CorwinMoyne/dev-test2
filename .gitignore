@@ -6,5 +6,6 @@ dist
 bower_components
 /app/scripts/**/**/*.js
 /app/scripts/**/**/*.js.map
-/test/spec/**/**/*.js
+/test/scripts/**/**/*.js
+/test/scripts/**/**/*.js.map
 typings
