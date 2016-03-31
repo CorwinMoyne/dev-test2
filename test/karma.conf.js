@@ -8,7 +8,7 @@ module.exports = function (config) {
 
     config.set({
         // enable / disable watching file and executing tests whenever any file changes
-        autoWatch: true,
+        autoWatch: false,
 
         // base path, that will be used to resolve files and exclude
         basePath: '../',
@@ -34,8 +34,21 @@ module.exports = function (config) {
             'bower_components/angular-mocks/angular-mocks.js',
             'bower_components/angular-scenario/angular-scenario.js',
         // endbower
-            "app/scripts/**/**/**/*.js",
-            "test/scripts/**/**/**/*.js"
+        
+            'app/scripts/**/**/*.module.js',
+            'app/scripts/**/**/*.model.js',
+            'app/scripts/**/**/*.provider.js',
+            'app/scripts/**/**/*.config.js',
+            'app/scripts/**/**/*.constant.js',
+            'app/scripts/**/**/*.route.js',
+            'app/scripts/**/**/*.run.js',
+            'app/scripts/**/**/*.factory.js',
+            'app/scripts/**/**/*.service.js',
+            'app/scripts/**/**/*.filter.js',
+            'app/scripts/**/**/*.directive.js',
+            'app/scripts/**/**/*.controller.js',
+
+            "test/scripts/**/**/**/*.spec.js"
         ],
 
         // list of files / patterns to exclude
