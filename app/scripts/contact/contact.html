@@ -1,5 +1,18 @@
 <div>
+    <div id="maps">
+        <ng-map center="{{vm.map.center}}" options="vm.map.options" zoom="12" style="width:500px">
+            <marker position="{{vm.marker.position.latitude}}, {{vm.marker.position.longitude}}" on-click="vm.showInfoWindow(event,vm.t)">
+            </marker>
+        </ng-map>
     </div>
-        <h2>Contact Us</h2>
+    <div>
+        <br> Address:
+        <br> Tullygay
+        <br> Conwall
+        <br> Letterkenny
+        <br> Co Donegal
+        <br>
+        <br>Email Address: johndalyandsons@hotmail.com
+        <br> Tel: 07491-09839, 07491-22742
     </div>
 </div>
