@@ -32,6 +32,7 @@ module.exports = function (config) {
         'bower_components/angular-animate/angular-animate.js',
         'bower_components/angular-touch/angular-touch.js',
         'bower_components/angular-mocks/angular-mocks.js',
+        'bower_components/ngmap/build/scripts/ng-map.js',
         // endbower
         
             'app/scripts/**/**/*.module.js',
