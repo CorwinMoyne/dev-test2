@@ -1,29 +1,91 @@
-.navbar-inner{
-    /*height: 90px*/
-    min-height: 60px
-    }
-.navbar .brand{
-    padding: 0 10px;
+/*header*/
+#header .navbar {
+    height: 120px;
+    background-color: #302f2f;
+    color: white;
+    font-size: 1.1em;
+    border-bottom: solid 1px white;
 }
-.navbar .nav > li > a {
-    padding: 20px 15px;
-    /*padding: 35px 15px;*/
+#header .navbar #tel {
+    margin-top: 30px;
+    text-align: center;
 }
-.navbar .btn-navbar {
-    /*margin-right: 0px;*/
-    margin-top:15px;
+#header .navbar #slogan {
+    margin-top: 10px;
+    text-align: center;
 }
-.brand img{
-    margin-top: 5px
+
+/*body*/
+body {
+    background-color: #f2f2f2;
 }
-@media (max-width:768px) {
-    .brand img{
-        margin-bottom: 5px
-    }
-    .navbar .btn-navbar{
-        /*margin-right: -15px;*/
-    }
-    .navbar .nav > li > a {
-        padding: 10px 15px;
-    }
+
+/*main navbar*/
+#main-nav .navbar {
+    margin-top: 120px;
+    background-color: #cbad5d;
 }
+#main-nav .navbar ul > li {
+    cursor: pointer;
+}
+#main-nav .navbar-default .navbar-nav .active a {
+    color: #302f2f;
+    background-color: #cbad5d;
+    font-weight: bold;
+}
+#main-nav .navbar-default .navbar-nav a:hover {
+    background-color: #cbad5d;
+    color: black;
+}
+
+/*main div on index page*/
+#main {
+    margin-top: 170px;
+}
+
+/*home page*/
+#home-text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/*headstones thumbnail*/
+.thumbnail .img-responsive {
+    width: 300px;
+    height: 200px;
+}
+.thumbnail .thumbnail-text {
+    color: black;
+}
+
+/*headstones modal*/
+#headstones-modal #modal-glyphicon {
+    text-align: right;
+}
+#headstones-modal #modal-glyphicon a {
+    color: #cbad5d;
+}
+#headstones-modal #carousel .img-responsive {
+    height: 450px;
+    width: auto;
+    margin:auto;
+}
+#headstones-modal h3 {
+    color: black;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+#headstones-modal .right.carousel-control {
+    color: #cbad5d;
+}
+#headstones-modal .left.carousel-control {
+    color: #cbad5d;
+}
+#headstones-modal .carousel-indicators li {
+    background-color: #cbad5d;
+}
+#headstones-modal .carousel-indicators .active {
+    background-color: #302f2f;
+}
+
+

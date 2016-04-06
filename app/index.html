@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endinjector -->
     <!-- endbuild -->
+    <base href="/">
 </head>
  <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCtYlDk-rKM5C0HNj8v3BxQQD003DsVaww"></script>
 
@@ -24,16 +25,16 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <!-- Add your site or application content here -->
+    
+    <div ng-include="'scripts/layout/header/header.html'"></div>
     <div ng-include="'scripts/layout/navbar/navbar.html'"></div>
-    <div class="container">
-        <div ng-include="'scripts/main/main.html'" ng-controller="app.MainCtrl as vm"></div>
+    <div id="main" class="container-fluid">
+        <div ui-view=""></div>
     </div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-    <script>
+    <!--<script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -41,7 +42,7 @@
 
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
-    </script>
+    </script>-->
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -55,14 +56,30 @@
     <script src="bower_components/json3/lib/json3.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <!-- moduleinjector:js -->
     <script src="scripts/app.module.js"></script>
+    <script src="scripts/headstone/headstone.module.js"></script>
+    <script src="scripts/headstones/headstones.module.js"></script>
+    <script src="scripts/home/home.module.js"></script>
     <!-- endmoduleinjector -->
     <!-- injector:js -->
+    <script src="scripts/app.config.js"></script>
+    <script src="scripts/headstone/headstone.route.js"></script>
+    <script src="scripts/headstones/headstones.controller.js"></script>
+    <script src="scripts/headstones/headstones.modal.controller.js"></script>
+    <script src="scripts/headstones/headstones.route.js"></script>
+    <script src="scripts/headstones/headstones.service.js"></script>
+    <script src="scripts/home/home-images.service.js"></script>
+    <script src="scripts/home/home.controller.js"></script>
+    <script src="scripts/home/home.route.js"></script>
     <script src="scripts/main/main.controller.js"></script>
     <!-- endinjector -->
     <!-- endbuild -->

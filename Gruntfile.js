@@ -100,7 +100,7 @@ module.exports = function (grunt) {
         // grunt-ts
         ts: {
             default: {
-                src: ["app/**/*.ts", "test/spec/**/**/*.ts"],
+                src: ["app/**/*.ts", "test/scripts/**/**/**/*.spec.ts"],
                 reference: 'typings/_reference.ts'
             }
         },
@@ -238,6 +238,22 @@ module.exports = function (grunt) {
             app: {
                 src: ['<%= yeoman.app %>/index.html'],
                 ignorePath: /..\//
+            },
+            spec: {
+                devDependencies: true,
+                src: 'test/karma.conf.js',
+                ignorePath: /\.\.\//,
+                fileTypes: {
+                    js: {
+                        block: /(([\s\t]*)\/\/\s*bower:*(\S*))(\n|\r|.)*?(\/\/\s*endbower)/gi,
+                        detect: {
+                            js: /'(.*\.js)'/gi
+                        },
+                        replace: {
+                            js: '\'{{filePath}}\','
+                        }
+                    }
+                }
             }
         },
 
