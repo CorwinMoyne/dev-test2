@@ -91,6 +91,16 @@ body {
     background-color: #302f2f;
 }
 
+/*contact us*/
+.contact-header {
+    margin: 10px 0px 10px 0px;
+    color: #cbad5d;
+    font-size: 1.4em;
+}
+#contact-map {
+    margin-top: 10px;
+}
+
 @media(max-width: 768px) {
     
 }
