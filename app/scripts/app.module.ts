@@ -9,6 +9,7 @@ module app {
         'ngAnimate',
         'ngTouch',
         'ngMap',
+        
         'app.home',
         'app.headstone',
         'app.headstones',

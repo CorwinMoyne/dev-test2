@@ -3,15 +3,18 @@
     height: 120px;
     background-color: #302f2f;
     color: white;
-    font-size: 1.1em;
+    font-size: 1em;
     border-bottom: solid 1px white;
 }
+#header #logo {
+    margin-top: 1em;
+}
 #header .navbar #tel {
-    margin-top: 30px;
+    margin-top: 1em;
     text-align: center;
 }
 #header .navbar #slogan {
-    margin-top: 10px;
+    margin-top: 1em;
     text-align: center;
 }
 
@@ -86,6 +89,10 @@ body {
 }
 #headstones-modal .carousel-indicators .active {
     background-color: #302f2f;
+}
+
+@media(max-width: 768px) {
+    
 }
 
 

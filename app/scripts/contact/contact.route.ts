@@ -16,15 +16,7 @@ module app.contact {
                 url: '/contact',
                 templateUrl: 'scripts/contact/contact.html',
                 controller: 'app.contact.ContactController',
-                controllerAs: 'vm',
-                resolve: {
-                    contact: resolveContact
-                }
+                controllerAs: 'vm'
             })
-    }
-
-    resolveContact.$inject = [];
-    function resolveContact(): ng.IPromise<any> {
-        return;
     }
 }
