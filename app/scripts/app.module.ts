@@ -11,7 +11,6 @@ module app {
         'ngMap',
         
         'app.home',
-        'app.headstone',
         'app.headstones',
         'app.contact'
     ];
