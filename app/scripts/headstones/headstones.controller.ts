@@ -14,6 +14,7 @@ module app.headstones {
             public headstones: any[]) { }
 
         openModal(index: number): void {
+            this.headstones[index].active = true;
             var modalInstance = this.$uibModal.open({
                 animation: true,
                 templateUrl: 'scripts/headstones/headstones.modal.html',
@@ -28,7 +29,6 @@ module app.headstones {
                     }
                 }
             });
-        
         }
         resolveHeadstones(): any {
             return this.headstones;
