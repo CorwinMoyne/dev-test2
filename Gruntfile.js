@@ -129,7 +129,7 @@ module.exports = function (grunt) {
                         return [
                             modRewrite([
                                 '!/api|assets|\\.html|\\.js|\\.png|\\.jpg|\\.css|\\woff|\\ttf|\\swf$ /index.html',
-                                '^/api/(.*)$ http://localhost:8000/api/$1 [P]']), 
+                                '^/api/(.*)$ http://localhost:8000/api/$1 [P]']),
                             connect.static('.tmp'),
                             connect().use(
                                 '/bower_components',
@@ -275,25 +275,6 @@ module.exports = function (grunt) {
                         filePath = filePath.replace('/.tmp/', '');
                         return '<script src="' + filePath + '"></script>';
                     },
-                    starttag: '<!-- moduleinjector:js -->',
-                    endtag: '<!-- endmoduleinjector -->'
-                },
-                files: {
-                    'app/index.html': [
-                        [
-                        // Inclusions
-                            'app/**/*.module.js',
-                        ]
-                    ]
-                }
-            },
-            scripts: {
-                options: {
-                    transform: function (filePath) {
-                        filePath = filePath.replace('/app/', '');
-                        filePath = filePath.replace('/.tmp/', '');
-                        return '<script src="' + filePath + '"></script>';
-                    },
                     starttag: '<!-- injector:js -->',
                     endtag: '<!-- endinjector -->'
                 },
@@ -301,11 +282,20 @@ module.exports = function (grunt) {
                     'app/index.html': [
                         [
                         // Inclusions
-                            'app/**/**/**/*.js',
+                            'app/scripts/**/**/*.module.js',
+                            'app/scripts/**/**/*.model.js',
+                            'app/scripts/**/**/*.provider.js',
+                            'app/scripts/**/**/*.config.js',
+                            'app/scripts/**/**/*.constant.js',
+                            'app/scripts/**/**/*.route.js',
+                            'app/scripts/**/**/*.run.js',
+                            'app/scripts/**/**/*.factory.js',
+                            'app/scripts/**/**/*.service.js',
+                            'app/scripts/**/**/*.filter.js',
+                            'app/scripts/**/**/*.directive.js',
+                            'app/scripts/**/**/*.controller.js',
                         // Exclusions
                             '!app/api/**/*.js',
-                            '!app/app.js',
-                            '!app/**/*.module.js',
                             '!app/**/*.spec.js',
                             '!app/**/*.mock.js'
                         ]
@@ -368,8 +358,12 @@ module.exports = function (grunt) {
         usemin: {
             html: ['<%= yeoman.dist %>/{,*/}*.html', '<%= yeoman.dist %>/scripts/{,*/}*.html'],
             css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+            js: ['<%= yeoman.dist %>/scripts/{,*/}*.js'],
             options: {
-                assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/images']
+                assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/images'],
+                patterns: {
+                    js: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']]
+                }
             }
         },
 
@@ -413,6 +407,19 @@ module.exports = function (grunt) {
             }
         },
 
+        ngtemplates: {
+            dist: {
+                options: {
+                    module: 'devApp',
+                    htmlmin: '<%= htmlmin.dist.options %>',
+                    usemin: 'scripts/scripts.js'
+                },
+                cwd: '<%= yeoman.app %>',
+                src: 'views/{,*/}*.html',
+                dest: '.tmp/templateCache.js'
+            }
+        },
+
         // ngmin tries to make the code safe for minification automatically by
         // using the Angular long form for dependency injection. It doesn't work on
         // things like resolve or inject so those have to be done manually.
@@ -446,7 +453,7 @@ module.exports = function (grunt) {
                         'api/{{config,src,vendor}/**,index.php,.htaccess}',
                         '*.{ico,png,txt}',
                         '.htaccess',
-                        '*.html',
+                        'index.html',
                         'scripts/{,*/}*.html',
                         'images/{,*/}*.{webp}',
                         'fonts/*'
@@ -556,10 +563,8 @@ module.exports = function (grunt) {
         'wiredep',
         'injector',
         'useminPrepare',
-    // 'concurrent:dist',
-        'copy:styles',
-        'imagemin',
-        'svgmin',
+        'concurrent:dist',
+        'ngtemplates',
         'autoprefixer',
         'concat',
         'ngmin',
