@@ -19,7 +19,7 @@ module app.home {
                 controller: 'app.home.HomeController',
                 controllerAs: 'vm',
                 resolve: {
-                    images: resolveImages
+                    // images: resolveImages
                 }
             })
     }

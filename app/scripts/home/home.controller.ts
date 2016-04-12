@@ -6,10 +6,9 @@ module app.home {
     class HomeController {
 
         static $inject = [
-            'images'
+            // 'images'
         ];
-        constructor(
-            public images) { }
+        constructor() { }
     }
     angular.module('app.home').controller('app.home.HomeController', HomeController);
 }
