@@ -40,7 +40,7 @@
 </div>
 
 <div id="contact-map" class="col-md-6">
-    <ng-map center="{{vm.map.center}}" options="vm.map.options" zoom="12" style="width:500px">
+    <ng-map center="{{vm.map.center}}" options="vm.map.options" zoom="12">
         <marker position="{{vm.marker.position.latitude}}, {{vm.marker.position.longitude}}" on-click="vm.showInfoWindow(event,vm.t)">
         </marker>
     </ng-map>
