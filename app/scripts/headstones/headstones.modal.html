@@ -6,7 +6,7 @@
     </div>
     <div id="carousel">
         <div class="container-fluid">
-            <uib-carousel no-wrap="true">
+            <uib-carousel no-wrap="false">
                 <uib-slide ng-repeat="headstone in vm.headstones" active="headstone.active">
                     <h4>{{headstone.number}}. {{headstone.description}}</h4>
                     <img class="img-responsive" ng-src="{{headstone.image_path}}">

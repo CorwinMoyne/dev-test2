@@ -1,0 +1,65 @@
+[0410/141905:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0410/141905:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0410/141905:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0410/141905:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0410/141905:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0410/141905:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0410/141905:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0410/141905:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0410/141905:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x52bf0000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Program Files (x86)\Google\Chrome\Application\49.0.2623.112\chrome_child.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x736b6e30 of 28 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(134)] could not read data directory from C:\WINDOWS\WinSxS\x86_avast.vc110.crt_2036b14a11e83e4a_11.0.60610.1_none_1d37a43bbfe1dc9c\MSVCR110.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73760000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswCmnIS.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x736d0000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\WinSxS\x86_avast.vc110.crt_2036b14a11e83e4a_11.0.60610.1_none_1d37a43bbfe1dc9c\MSVCP110.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x737c0000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswCmnOS.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73910000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswCmnBS.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74870000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\SETUPAPI.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x738f0000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\log.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74480000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\NSI.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73300000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\DNSAPI.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73550000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\commchannel.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x72920000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\JsonRpcServer.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x732d0000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\rasman.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73430000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\RASAPI32.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73530000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\avastIP.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x72700000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\AavmRpch.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74250000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WSOCK32.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73510000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswEngLdr.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x730a0000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WININET.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x737f0000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\ashBase.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x72750000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswAux.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x728b0000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\ashTask.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73b50000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\NETUTILS.DLL
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x726e0000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\SRVCLI.DLL
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x72990000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\Aavm4h.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x6cbb0000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\dwrite.dll
+[0410/141905:ERROR:process_reader_win.cc(232)] ReadMemory at 0x20c154 of 12 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0410/141905:WARNING:process_snapshot_win.cc(89)] ReadMemory ExceptionInformation failed
+[0410/141905:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::InitializeException failed
+[0410/141905:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess, ntstatus=-1073741558
