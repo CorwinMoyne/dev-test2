@@ -9,7 +9,7 @@
             <uib-carousel no-wrap="false">
                 <uib-slide ng-repeat="headstone in vm.headstones" active="headstone.active">
                     <h4>{{headstone.number}}. {{headstone.description}}</h4>
-                    <img class="img-responsive" ng-src="{{headstone.image_path}}">
+                    <img class="img-responsive" ng-src="{{headstone.image_path}}" onerror="this.src='../../images/headstones/no-image.png'">
                 </uib-slide>
             </uib-carousel>
         </div>
