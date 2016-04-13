@@ -14,7 +14,7 @@ module app.headstones {
             private $http: ng.IHttpService) { }
 
         getHeadstones(): ng.IPromise<any> {
-            return this.$http.get('/api/headstones').then((response: any) => {
+            return this.$http.get('/api/headstones').then((response: ng.IHttpPromiseCallbackArg<any>) => {
                 return response.data;
             });
         }

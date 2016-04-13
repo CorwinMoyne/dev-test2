@@ -34,6 +34,8 @@ module.exports = function (config) {
         'bower_components/angular-mocks/angular-mocks.js',
         'bower_components/ngmap/build/scripts/ng-map.js',
         'bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.js',
+        'bower_components/spin.js/spin.js',
+        'bower_components/angular-spinner/angular-spinner.js',
         // endbower
         
             'app/scripts/**/**/*.module.js',

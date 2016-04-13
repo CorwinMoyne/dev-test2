@@ -24,9 +24,9 @@ module app.headstones {
     }
 
     resolveHeadstones.$inject = ['app.headstones.HeadstonesService'];
-    function resolveHeadstones(headstonesService: app.headstones.IHeadstonesService): ng.IPromise<any> {
-         return headstonesService.getHeadstones().then((data) => {
-        return data;
-         });
+    function resolveHeadstones(headstonesService: app.headstones.IHeadstonesService): any {
+        return headstonesService.getHeadstones().then((data: any) => {
+            return data;
+        });
     }
 }

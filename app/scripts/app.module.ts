@@ -9,7 +9,8 @@ module app {
         'ngAnimate',
         'ngTouch',
         'ngMap',
-        
+        'angularSpinner',
+
         'app.home',
         'app.headstones',
         'app.contact',

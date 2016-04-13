@@ -330,6 +330,7 @@ module.exports = function (grunt) {
                     '<%= yeoman.dist %>/scripts/{,*/}*.js',
                     '<%= yeoman.dist %>/styles/{,*/}*.css',
                     '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+                    '!<%= yeoman.dist %>/images/headstones{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
                     '<%= yeoman.dist %>/styles/fonts/*'
                 ]
             }
@@ -356,13 +357,19 @@ module.exports = function (grunt) {
 
         // Performs rewrites based on filerev and the useminPrepare configuration
         usemin: {
-            html: ['<%= yeoman.dist %>/{,*/}*.html', '<%= yeoman.dist %>/scripts/{,*/}*.html'],
+            html: ['<%= yeoman.dist %>/index.html', '<%= yeoman.dist %>/scripts/**/**/*.html'],
             css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
             js: ['<%= yeoman.dist %>/scripts/{,*/}*.js'],
             options: {
-                assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/images'],
+                assetsDirs: [
+                    '<%= yeoman.dist %>',
+                    '<%= yeoman.dist %>/images',
+                    '<%= yeoman.dist %>/styles'
+                ],
                 patterns: {
-                    js: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']]
+                    js: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']],
+                    html: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']],
+                    css: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']]
                 }
             }
         },
@@ -401,7 +408,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.dist %>',
-                    src: ['*.html', 'scripts/{,*/}*.html'],
+                    src: ['*.html', 'scripts/**/**/*.html'],
                     dest: '<%= yeoman.dist %>'
                 }]
             }
@@ -410,12 +417,12 @@ module.exports = function (grunt) {
         ngtemplates: {
             dist: {
                 options: {
-                    module: 'devApp',
+                    module: 'app',
                     htmlmin: '<%= htmlmin.dist.options %>',
                     usemin: 'scripts/scripts.js'
                 },
                 cwd: '<%= yeoman.app %>',
-                src: 'views/{,*/}*.html',
+                src: 'scripts/**/**/*.html',
                 dest: '.tmp/templateCache.js'
             }
         },
@@ -454,7 +461,7 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'index.html',
-                        'scripts/{,*/}*.html',
+                        'scripts/**/**/*.html',
                         'images/{,*/}*.{webp}',
                         'fonts/*'
                     ]
@@ -492,6 +499,32 @@ module.exports = function (grunt) {
                 'svgmin'
             ]
         },
+        
+        // The following *-min tasks will produce minified files in the dist folder
+        // By default, your `index.html`'s <!-- Usemin block --> will take care of
+        // minification. These next options are pre-configured if you do not wish
+        // to use the Usemin blocks.
+        // cssmin: {
+        //   dist: {
+        //     files: {
+        //       '<%= yeoman.dist %>/styles/main.css': [
+        //         '.tmp/styles/{,*/}*.css'
+        //       ]
+        //     }
+        //   }
+        // },
+        // uglify: {
+        //   dist: {
+        //     files: {
+        //       '<%= yeoman.dist %>/scripts/scripts.js': [
+        //         '<%= yeoman.dist %>/scripts/scripts.js'
+        //       ]
+        //     }
+        //   }
+        // },
+        // concat: {
+        //   dist: {}
+        // },
 
         shell: {
             options: {

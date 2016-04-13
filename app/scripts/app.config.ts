@@ -10,10 +10,11 @@ module app {
 	/**
 	 * Function to configure the module.
 	 */
-    config.$inject = ['$locationProvider', '$urlRouterProvider'];
+    config.$inject = ['$locationProvider', '$urlRouterProvider', 'usSpinnerConfigProvider'];
     function config(
-        $locationProvider: angular.ILocationProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) {
+        $locationProvider: angular.ILocationProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider, usSpinnerConfigProvider: any) {
         $locationProvider.html5Mode(true);
         $urlRouterProvider.otherwise('/home');
+        usSpinnerConfigProvider.setDefaults({color: '#cbad5d'});
     }
 }

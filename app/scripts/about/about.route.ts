@@ -13,13 +13,8 @@ module app.about {
     function routing($stateProvider: angular.ui.IStateProvider) {
         $stateProvider
             .state('about', {
-                url: '/headstone/:id',
-                templateUrl: 'scripts/about/about.html',
-                 controller: '',
-                 controllerAs: 'vm',
-              
+                url: '/about',
+                templateUrl: 'scripts/about/about.html'
             })
     }
-
- 
 }

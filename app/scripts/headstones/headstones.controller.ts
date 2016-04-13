@@ -15,7 +15,7 @@ module app.headstones {
 
         openModal(index: number): void {
             this.headstones[index].active = true;
-            var modalInstance = this.$uibModal.open({
+            this.$uibModal.open({
                 animation: true,
                 templateUrl: 'scripts/headstones/headstones.modal.html',
                 controller: 'app.headstones.HeadstonesModalController as vm',
@@ -29,9 +29,6 @@ module app.headstones {
                     }
                 }
             });
-        }
-        resolveHeadstones(): any {
-            return this.headstones;
         }
     }
     angular.module('app.headstones').controller('app.headstones.HeadstonesController', HeadstonesController);
