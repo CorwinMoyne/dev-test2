@@ -1,0 +1,12 @@
+Hosting Package: HOME Package
+Domain: johndalyandsons.com
+Username: khccwdsr
+Password: 4CcZ12y2tt
+Server Information:
+Server IP: 81.27.105.44
+Control Panel Access:
+Control Panel URL: https://mycpanel.hosts.im:2083
+Uploading Your Website;
+Temporarily you may use one of the addresses given below manage your web site:
+Temporary FTP Hostname: 81.27.105.44
+Temporary Webpage URL: http://81.27.105.44/~khccwdsr/
