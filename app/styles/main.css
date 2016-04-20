@@ -54,8 +54,10 @@ body {
 
 /*headstones thumbnail*/
 .thumbnail .img-responsive {
-    width: 300px;
-    height: 200px;
+    /*width: 300px;
+    height: 200px;*/
+        max-width: 100%;
+    height: auto;
 }
 .thumbnail .thumbnail-text {
     color: black;
