@@ -458,6 +458,7 @@ module.exports = function (grunt) {
                     dest: '<%= yeoman.dist %>',
                     src: [
                         'api/{{config,src,vendor}/**,index.php,.htaccess}',
+                        'api/routes/*.php',
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'index.html',
