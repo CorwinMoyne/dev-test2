@@ -357,13 +357,17 @@ module.exports = function (grunt) {
 
         // Performs rewrites based on filerev and the useminPrepare configuration
         usemin: {
-            html: ['<%= yeoman.dist %>/index.html', '<%= yeoman.dist %>/scripts/**/**/*.html'],
+            html: [
+                '<%= yeoman.dist %>/index.html',
+                '<%= yeoman.dist %>/scripts/**/**/*.html'
+            ],
             css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
             js: ['<%= yeoman.dist %>/scripts/{,*/}*.js'],
             options: {
                 assetsDirs: [
                     '<%= yeoman.dist %>',
                     '<%= yeoman.dist %>/images',
+                    '<%= yeoman.dist %>/scripts',
                     '<%= yeoman.dist %>/styles'
                 ],
                 patterns: {
@@ -407,7 +411,7 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: '<%= yeoman.dist %>',
+                    cwd: '<%= yeoman.app %>',
                     src: ['*.html', 'scripts/**/**/*.html'],
                     dest: '<%= yeoman.dist %>'
                 }]
@@ -459,6 +463,7 @@ module.exports = function (grunt) {
                     src: [
                         'api/{{config,src,vendor}/**,index.php,.htaccess}',
                         'api/routes/*.php',
+                        'api/dbconnect.php',
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'index.html',

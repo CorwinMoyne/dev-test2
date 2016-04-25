@@ -23,6 +23,11 @@ body {
     background-color: #f2f2f2;
 }
 
+.body-text {
+    margin-top: 10px;
+    float: left;
+}
+
 /*main navbar*/
 #main-nav .navbar {
     margin-top: 120px;
@@ -44,12 +49,6 @@ body {
 /*main div on index page*/
 #main {
     margin-top: 170px;
-}
-
-/*home page*/
-#home-text {
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 /*headstones thumbnail*/
@@ -101,13 +100,5 @@ body {
     margin-top: 10px;
 }
 
-/*about us*/
-#about-us {
-    margin: 10px;
-}
-
-@media(max-width: 768px) {
-    
-}
 
 
