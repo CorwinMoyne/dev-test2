@@ -362,7 +362,6 @@ module.exports = function (grunt) {
                 '<%= yeoman.dist %>/scripts/**/**/*.html'
             ],
             css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
-            js: ['<%= yeoman.dist %>/scripts/{,*/}*.js'],
             options: {
                 assetsDirs: [
                     '<%= yeoman.dist %>',
@@ -371,8 +370,11 @@ module.exports = function (grunt) {
                     '<%= yeoman.dist %>/styles'
                 ],
                 patterns: {
-                    js: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']],
-                    html: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']],
+                    html: [
+                        [/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images'],
+                        [/(scripts\/.*?\.(?:js))/gm, 'Update the html to reference our revved js'],
+                        [/(styles\/.*.css)/gm, 'Update the HTML to reference our revved CSS']
+                    ],
                     css: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']]
                 }
             }
@@ -406,12 +408,11 @@ module.exports = function (grunt) {
                     collapseWhitespace: true,
                     conservativeCollapse: true,
                     collapseBooleanAttributes: true,
-                    removeCommentsFromCDATA: true,
-                    removeOptionalTags: true
+                    removeCommentsFromCDATA: true
                 },
                 files: [{
                     expand: true,
-                    cwd: '<%= yeoman.app %>',
+                    cwd: '<%= yeoman.dist %>',
                     src: ['*.html', 'scripts/**/**/*.html'],
                     dest: '<%= yeoman.dist %>'
                 }]
@@ -504,6 +505,19 @@ module.exports = function (grunt) {
                 'imagemin',
                 'svgmin'
             ]
+        },
+
+        eol: {
+            dist: {
+                options: {
+                    eol: 'lf', replace: true
+                },
+                files: [
+                    {
+                        src: ['<%= yeoman.dist %>/*.html'],
+                    }
+                ]
+            }
         },
         
         // The following *-min tasks will produce minified files in the dist folder
@@ -603,7 +617,7 @@ module.exports = function (grunt) {
         'injector',
         'useminPrepare',
         'concurrent:dist',
-        'ngtemplates',
+    // 'ngtemplates',
         'autoprefixer',
         'concat',
         'ngmin',
@@ -612,6 +626,7 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'filerev',
+        'eol',
         'usemin',
         'htmlmin'
     ]);
