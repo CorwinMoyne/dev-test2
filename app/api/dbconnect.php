@@ -1,8 +1,8 @@
 <?php
-  $dbhost="mysql.hostinger.co.uk";
-  $dbuser="u927063273_jdaly";
+  $dbhost="localhost";
+  $dbuser="khccwdsr_admin";
   $dbpass="Granlo.52";
-  $dbname="u927063273_jdaly";
+  $dbname="khccwdsr_jdalyandsons";
   $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);  
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   
