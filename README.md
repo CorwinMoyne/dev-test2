@@ -3,7 +3,7 @@ To use this seed project (angular 1.4.x):
 
 - Clone it with new name:
 
-- git clone https://...git newProjectName
+- git clone https://bitbucket.org/corwin_moyne/angular-1.4-seed newProjectName
 
 - Create a new project in BitBucket for your new app
 
