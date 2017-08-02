@@ -7,19 +7,12 @@ module app.home {
 
     describe('Home Controller', () => {
 
-        var images: any;
-        var controller: any;
+        var controller: app.home.HomeController;
 
-        beforeEach(angular.mock.module('app'));
-        
-        beforeEach(angular.mock.module('app.home', ($provide: ng.auto.IProvideService) => {
-            $provide.value('images', {});
-        }));
+        beforeEach(angular.mock.module('app.home'));
 
         beforeEach(inject(($controller: ng.IControllerService) => {
-            controller = $controller('app.home.HomeController', { 
-                images 
-            });
+            controller = $controller('app.home.HomeController', {});
         }));
 
         it('should define the home controller', () => {

@@ -3,11 +3,9 @@
 module app.home {
     'use strict';
 
-    class HomeController {
+    export class HomeController {
 
-        static $inject = [
-            // 'images'
-        ];
+        static $inject = [];
         constructor() { }
     }
     angular.module('app.home').controller('app.home.HomeController', HomeController);

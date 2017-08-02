@@ -5,7 +5,6 @@ module app {
 
     var requiredModules: string[] = [
         'ui.router',
-        'ui.bootstrap',
         'ngAnimate',
         'ngTouch',
 

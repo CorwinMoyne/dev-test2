@@ -9,7 +9,7 @@
 
 var modRewrite = require('connect-modrewrite');
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
     // Load grunt tasks automatically
     require('load-grunt-tasks')(grunt);
@@ -18,7 +18,7 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
 
     // grunt-connect-proxy middleware to serve PHP
-    var proxyMiddleware = function (connect, options) {
+    var proxyMiddleware = function(connect, options) {
         var middlewares = [];
         var directory = options.directory || options.base[options.base.length - 1];
         if (!Array.isArray(options.base)) {
@@ -28,7 +28,7 @@ module.exports = function (grunt) {
         // Setup the proxy
         middlewares.push(require('grunt-connect-proxy/lib/utils').proxyRequest);
 
-        options.base.forEach(function (base) {
+        options.base.forEach(function(base) {
             // Serve static files.
             middlewares.push(connect.static(base));
         });
@@ -98,7 +98,7 @@ module.exports = function (grunt) {
                 tasks: ['shell:phpTest']
             }
         },
-    
+
         // grunt-ts
         ts: {
             default: {
@@ -115,26 +115,25 @@ module.exports = function (grunt) {
                 hostname: 'localhost',
                 livereload: 35729
             },
-            proxies: [
-                {
-                    context: '/api',
-                    host: 'localhost',
-                    port: '<%= php.options.port %>'
-                }
-            ],
+            proxies: [{
+                context: '/api',
+                host: 'localhost',
+                port: '<%= php.options.port %>'
+            }],
             livereload: {
                 options: {
                     open: true,
-                    middleware: function (connect, options) {
+                    middleware: function(connect, options) {
                         return [
                             modRewrite([
                                 '!/api|assets|\\.html|\\.js|\\.png|\\.jpg|\\.css|\\woff|\\ttf|\\swf$ /index.html',
-                                '^/api/(.*)$ http://localhost:8000/api/$1 [P]']),
+                                '^/api/(.*)$ http://localhost:8000/api/$1 [P]'
+                            ]),
                             connect.static('.tmp'),
                             connect().use(
                                 '/bower_components',
                                 connect.static('./bower_components')
-                                ),
+                            ),
                             connect.static(appConfig.app)
                         ].concat(proxyMiddleware(connect, options));
                     }
@@ -143,14 +142,14 @@ module.exports = function (grunt) {
             test: {
                 options: {
                     port: 9001,
-                    middleware: function (connect, options) {
+                    middleware: function(connect, options) {
                         return [
                             connect.static('.tmp'),
                             connect.static('test'),
                             connect().use(
                                 '/bower_components',
                                 connect.static('./bower_components')
-                                ),
+                            ),
                             connect.static(appConfig.app)
                         ].concat(proxyMiddleware(connect, options));
                     }
@@ -270,7 +269,7 @@ module.exports = function (grunt) {
             // Inject application script files into index.html (doesn't include bower)
             modulescripts: {
                 options: {
-                    transform: function (filePath) {
+                    transform: function(filePath) {
                         filePath = filePath.replace('/app/', '');
                         filePath = filePath.replace('/.tmp/', '');
                         return '<script src="' + filePath + '"></script>';
@@ -281,7 +280,7 @@ module.exports = function (grunt) {
                 files: {
                     'app/index.html': [
                         [
-                        // Inclusions
+                            // Inclusions
                             'app/scripts/**/**/*.module.js',
                             'app/scripts/**/**/*.model.js',
                             'app/scripts/**/**/*.provider.js',
@@ -294,7 +293,7 @@ module.exports = function (grunt) {
                             'app/scripts/**/**/*.filter.js',
                             'app/scripts/**/**/*.directive.js',
                             'app/scripts/**/**/*.controller.js',
-                        // Exclusions
+                            // Exclusions
                             '!app/api/**/*.js',
                             '!app/**/*.spec.js',
                             '!app/**/*.mock.js'
@@ -304,7 +303,7 @@ module.exports = function (grunt) {
             },
             css: {
                 options: {
-                    transform: function (filePath) {
+                    transform: function(filePath) {
                         filePath = filePath.replace('/app/', '');
                         filePath = filePath.replace('/.tmp/', '');
                         return '<link rel="stylesheet" href="' + filePath + '">';
@@ -315,7 +314,7 @@ module.exports = function (grunt) {
                 files: {
                     'app/index.html': [
                         [
-                        // Inclusions
+                            // Inclusions
                             'app/styles/**/*.css',
                         ]
                     ]
@@ -375,7 +374,9 @@ module.exports = function (grunt) {
                         [/(scripts\/.*?\.(?:js))/gm, 'Update the html to reference our revved js'],
                         [/(styles\/.*.css)/gm, 'Update the HTML to reference our revved CSS']
                     ],
-                    css: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']]
+                    css: [
+                        [/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
+                    ]
                 }
             }
         },
@@ -473,16 +474,16 @@ module.exports = function (grunt) {
                         'fonts/*'
                     ]
                 }, {
-                        expand: true,
-                        cwd: '.tmp/images',
-                        dest: '<%= yeoman.dist %>/images',
-                        src: ['generated/*']
-                    }, {
-                        expand: true,
-                        cwd: 'bower_components/bootstrap/dist',
-                        src: 'fonts/*',
-                        dest: '<%= yeoman.dist %>'
-                    }]
+                    expand: true,
+                    cwd: '.tmp/images',
+                    dest: '<%= yeoman.dist %>/images',
+                    src: ['generated/*']
+                }, {
+                    expand: true,
+                    cwd: 'bower_components/bootstrap/dist',
+                    src: 'fonts/*',
+                    dest: '<%= yeoman.dist %>'
+                }]
             },
             styles: {
                 expand: true,
@@ -510,16 +511,15 @@ module.exports = function (grunt) {
         eol: {
             dist: {
                 options: {
-                    eol: 'lf', replace: true
+                    eol: 'lf',
+                    replace: true
                 },
-                files: [
-                    {
-                        src: ['<%= yeoman.dist %>/*.html'],
-                    }
-                ]
+                files: [{
+                    src: ['<%= yeoman.dist %>/*.html'],
+                }]
             }
         },
-        
+
         // The following *-min tasks will produce minified files in the dist folder
         // By default, your `index.html`'s <!-- Usemin block --> will take care of
         // minification. These next options are pre-configured if you do not wish
@@ -566,11 +566,26 @@ module.exports = function (grunt) {
                 configFile: 'test/karma.conf.js',
                 singleRun: true
             }
+        },
+
+        sass: { // Task
+            dist: { // Target
+                options: { // Target options
+                    style: 'expanded'
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/styles',
+                    src: ['*.scss'],
+                    dest: '<%= yeoman.app %>/styles',
+                    ext: '.css'
+                }]
+            }
         }
     });
 
 
-    grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
+    grunt.registerTask('serve', 'Compile then start a connect web server', function(target) {
         if (target === 'dist') {
             return grunt.task.run([
                 'build',
@@ -583,18 +598,17 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'ts',
+            'sass',
             'wiredep',
             'injector',
             'concurrent:server',
             'autoprefixer',
-            'configureProxies',
-            'php:server',
             'connect:livereload',
             'watch'
         ]);
     });
 
-    grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
+    grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function(target) {
         grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
         grunt.task.run(['serve:' + target]);
     });
@@ -602,7 +616,7 @@ module.exports = function (grunt) {
     grunt.registerTask('test', [
         'clean:server',
         'ts',
-    // 'shell:phpTest',
+        'sass',
         'concurrent:test',
         'autoprefixer',
         'connect:test',
@@ -612,12 +626,11 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'ts',
-    // 'shell:phpUpdate',
+        'sass',
         'wiredep',
         'injector',
         'useminPrepare',
         'concurrent:dist',
-    // 'ngtemplates',
         'autoprefixer',
         'concat',
         'ngmin',

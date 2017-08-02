@@ -10,3 +10,5 @@ bower_components
 /test/scripts/**/**/*.js.map
 tscommand-*
 typings
+/app/styles/*.css
+/app/styles/*.css.map
