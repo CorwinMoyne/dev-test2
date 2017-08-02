@@ -1,9 +1,9 @@
-To use this seed project:
+To use this seed project (angular 1.4.x):
 =========================
 
 - Clone it with new name:
 
-- git clone https://corwin_moyne@bitbucket.org/corwin_moyne/angular-php-seed.git johndalyandsons
+- git clone https://...git newProjectName
 
 - Create a new project in BitBucket for your new app
 
@@ -13,7 +13,7 @@ To use this seed project:
 
 - git add .
 
-- git commit -m"initial commit"
+- git commit -m "initial commit"
 
 - git push
 
@@ -23,4 +23,3 @@ In your new project run:
 - bower install
 - npm install
 - tsd install
-- make install --directory app/api (may fail. try again until it installs php dependencies)

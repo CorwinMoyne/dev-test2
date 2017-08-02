@@ -8,13 +8,8 @@ module app {
         'ui.bootstrap',
         'ngAnimate',
         'ngTouch',
-        'ngMap',
-        'angularSpinner',
 
-        'app.home',
-        'app.headstones',
-        'app.contact',
-        'app.about'
+        'app.home'
     ];
     angular.module('app', requiredModules);
 }

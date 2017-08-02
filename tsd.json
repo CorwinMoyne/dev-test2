@@ -1,33 +1,24 @@
 {
-  "version": "v4",
-  "repo": "borisyankov/DefinitelyTyped",
-  "ref": "master",
-  "path": "typings",
-  "bundle": "typings/tsd.d.ts",
-  "installed": {
-    "angularjs/angular.d.ts": {
-      "commit": "e937b3e64af586d19f2ea29fdf771e9dc4feecc8"
-    },
-    "jquery/jquery.d.ts": {
-      "commit": "e937b3e64af586d19f2ea29fdf771e9dc4feecc8"
-    },
-    "angular-ui-router/angular-ui-router.d.ts": {
-      "commit": "0144ad5a74053f2292424847259c4c8e1d0fecaa"
-    },
-    "angular-ui-bootstrap/angular-ui-bootstrap.d.ts": {
-      "commit": "bf4ecf5b68887ed5a065e3922885c34d0f5739df"
-    },
-    "angularjs/angular-mocks.d.ts": {
-      "commit": "e937b3e64af586d19f2ea29fdf771e9dc4feecc8"
-    },
-    "jasmine/jasmine.d.ts": {
-      "commit": "e937b3e64af586d19f2ea29fdf771e9dc4feecc8"
-    },
-    "google-maps/google-maps.d.ts": {
-      "commit": "247e8d48404d11f3aff85dea5029413229e0fc36"
-    },
-    "googlemaps/google.maps.d.ts": {
-      "commit": "247e8d48404d11f3aff85dea5029413229e0fc36"
+    "version": "v4",
+    "repo": "borisyankov/DefinitelyTyped",
+    "ref": "master",
+    "path": "typings",
+    "bundle": "typings/tsd.d.ts",
+    "installed": {
+        "angularjs/angular.d.ts": {
+            "commit": "e937b3e64af586d19f2ea29fdf771e9dc4feecc8"
+        },
+        "jquery/jquery.d.ts": {
+            "commit": "e937b3e64af586d19f2ea29fdf771e9dc4feecc8"
+        },
+        "angular-ui-router/angular-ui-router.d.ts": {
+            "commit": "0144ad5a74053f2292424847259c4c8e1d0fecaa"
+        },
+        "angularjs/angular-mocks.d.ts": {
+            "commit": "e937b3e64af586d19f2ea29fdf771e9dc4feecc8"
+        },
+        "jasmine/jasmine.d.ts": {
+            "commit": "e937b3e64af586d19f2ea29fdf771e9dc4feecc8"
+        }
     }
-  }
 }
