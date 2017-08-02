@@ -1,15 +1,35 @@
-nav {
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
+body {
+    padding-top: 70px;
+}
+
+.navbar-header {
+    float: none;
+}
+
+.navbar-toggle {
+    display: block;
+}
+
+.navbar-collapse.collapse {
+    display: none!important;
+    .in {
+        display: block !important;
     }
-    li {
-        display: inline-block;
+}
+
+.navbar-nav {
+    float: none!important;
+    margin: 7.5px -15px;
+    >li {
+        float: none;
+        >a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
     }
-    a {
-        display: block;
-        padding: 6px 12px;
-        text-decoration: none;
-    }
+}
+
+.profile-pic {
+    width: 64px;
+    height: 64px;
 }

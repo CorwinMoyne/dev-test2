@@ -76,8 +76,11 @@ module.exports = function(grunt) {
                 tasks: ['newer:jshint:test', 'karma']
             },
             styles: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-                tasks: ['newer:copy:styles', 'autoprefixer']
+                files: ['<%= yeoman.app %>/styles/{,*/}*.scss'],
+                tasks: ['newer:sass', 'injector'],
+                options: {
+                    livereload: '<%= connect.options.livereload %>'
+                }
             },
             gruntfile: {
                 files: ['Gruntfile.js']
@@ -89,7 +92,7 @@ module.exports = function(grunt) {
                 files: [
                     '<%= yeoman.app %>/api/{,{config,src,tests}/**/}/*',
                     '<%= yeoman.app %>/{,*/}*.html',
-                    '.tmp/styles/{,*/}*.css',
+                    '.tmp/styles/{,*/}*.scss',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                 ]
             },
@@ -571,7 +574,8 @@ module.exports = function(grunt) {
         sass: { // Task
             dist: { // Target
                 options: { // Target options
-                    style: 'expanded'
+                    style: 'expanded',
+                    noCache: true
                 },
                 files: [{
                     expand: true,
