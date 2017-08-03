@@ -1,5 +1,5 @@
 body {
-  padding-top: 70px; }
+  padding-top: 50px; }
 
 .navbar-header {
   float: none; }
@@ -29,6 +29,30 @@ body {
     height: 32px; }
   .profile .image {
     width: 32px;
-    height: 32px; }
+    height: 32px;
+    border: 2px solid #3f93d3; }
+
+.search-bar {
+  margin: 20px 20px; }
+
+.main-nav {
+  height: 100px;
+  background: #1f2532;
+  background-size: cover;
+  white-space: nowrap; }
+  .main-nav .navbar-nav {
+    min-width: 100%;
+    text-align: center;
+    color: white;
+    margin: 0;
+    white-space: nowrap; }
+    .main-nav .navbar-nav > li {
+      display: inline-block;
+      width: 20% a;
+        width-color: white; }
+
+@media (min-width: 1px) and (max-width: 600px) {
+  .main-nav {
+    position: absolute; } }
 
 /*# sourceMappingURL=main.css.map */

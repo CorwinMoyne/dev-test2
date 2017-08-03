@@ -7,9 +7,7 @@
             <span class="icon-bar"></span>
         </button>
         </div>
-        <div class="navbar-collapse collapse">
-            <!-- menu items go in here -->
-        </div>
+        <div class="navbar-collapse collapse"></div>
         <div class="profile pull-right">
             <span class="fa fa-search fa-2x" aria-hidden="true" ng-click="showSearch=!showSearch"></span>
             <span>
@@ -19,25 +17,6 @@
     </div>
 </nav>
 
-<div class="container-fluid" ng-show="showSearch">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="input-group">
-                <div class="input-group-btn">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </div>
-                <input type="text" class="form-control" aria-label="search bar">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="button">Go!</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<ng-include src="'scripts/layout/navbar/searchbar.html'"></ng-include>
+
+<ng-include src="'scripts/layout/navbar/main-nav.html'"></ng-include>

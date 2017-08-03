@@ -1,5 +1,7 @@
+$main-nav-color: #1f2532;
+$highlight-color: #3f93d3;
 body {
-    padding-top: 70px;
+    padding-top: 50px;
 }
 
 .navbar-header {
@@ -39,5 +41,44 @@ body {
     .image {
         width: 32px;
         height: 32px;
+        border: 2px solid $highlight-color;
     }
 }
+
+.search-bar {
+    margin: 20px 20px;
+}
+
+.main-nav {
+    height: 100px;
+    background: $main-nav-color;
+    background-size: cover;
+    white-space: nowrap;
+    .navbar-nav {
+        min-width: 100%;
+        text-align: center;
+        color: white;
+        margin: 0;
+        white-space: nowrap;
+        >li {
+            display: inline-block;
+            width: 20% a {
+                color: white;
+            }
+        }
+    }
+}
+
+@media (min-width: 1px) and (max-width: 600px) {
+    .main-nav {
+        position: absolute;
+    }
+}
+
+@media (max-width: 767px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
