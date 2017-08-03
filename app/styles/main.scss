@@ -29,7 +29,15 @@ body {
     }
 }
 
-.profile-pic {
-    width: 64px;
-    height: 64px;
+.profile {
+    display: flex;
+    padding: .5em;
+    .fa {
+        width: 32px;
+        height: 32px;
+    }
+    .image {
+        width: 32px;
+        height: 32px;
+    }
 }

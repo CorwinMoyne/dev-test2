@@ -77,7 +77,7 @@ module.exports = function(grunt) {
             },
             styles: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.scss'],
-                tasks: ['newer:sass', 'injector'],
+                tasks: ['sass'],
                 options: {
                     livereload: '<%= connect.options.livereload %>'
                 }
@@ -572,18 +572,18 @@ module.exports = function(grunt) {
         },
 
         sass: { // Task
-            dist: { // Target
-                options: { // Target options
-                    style: 'expanded',
-                    noCache: true
-                },
-                files: [{
-                    expand: true,
-                    cwd: '<%= yeoman.app %>/styles',
-                    src: ['*.scss'],
-                    dest: '<%= yeoman.app %>/styles',
-                    ext: '.css'
-                }]
+            dev: { // Target
+                options: {},
+                files: {
+                    '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
+                }
+                // files: [{
+                //     expand: true,
+                //     cwd: '<%= yeoman.app %>/styles',
+                //     src: ['*.scss'],
+                //     dest: '<%= yeoman.app %>',
+                //     ext: '.css'
+                // }]
             }
         }
     });
