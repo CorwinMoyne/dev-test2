@@ -47,9 +47,65 @@ body {
     margin: 0;
     white-space: nowrap; }
     .main-nav .navbar-nav > li {
-      display: inline-block;
-      width: 20% a;
-        width-color: white; }
+      display: inline-block; }
+      .main-nav .navbar-nav > li a {
+        color: white; }
+
+.communities-header {
+  min-width: 100%;
+  height: 80px;
+  background-color: #eaeaea;
+  margin-bottom: 20px; }
+
+.header-logo {
+  text-align: right; }
+
+.cog {
+  text-align: right;
+  margin-top: 20px;
+  min-height: 50px; }
+
+.icon {
+  display: inline-block;
+  text-indent: -9999px;
+  width: 16px;
+  height: 16px; }
+
+.search-icon {
+  background: url("../images/icons/search-icon.svg");
+  background-size: 16px 16px; }
+
+.letters {
+  letter-spacing: 10px; }
+
+.letter {
+  font-size: 1.2em;
+  cursor: pointer; }
+
+.person {
+  padding: 15px;
+  display: flex; }
+  .person .image {
+    width: 48px;
+    height: 48px;
+    position: absolute; }
+  .person .main {
+    z-index: 0; }
+  .person .overlay {
+    z-index: 3; }
+  .person .border {
+    border: 2px solid #198074; }
+  .person .info {
+    margin: 5px 0px 0px 60px; }
+  .person .name {
+    color: #3f93d3; }
+  .person .email {
+    font-size: .8em; }
+
+.btn-default {
+  background-color: #198074;
+  color: white;
+  width: 100%; }
 
 @media (min-width: 1px) and (max-width: 600px) {
   .main-nav {
