@@ -24,9 +24,10 @@ module app.communities {
         loadMore(): void {
             this.limitTo += this.itemsPerPage;
         }
+
         /**
          * updates the selected letter when it is clicked
-         * the selected letter is then highlighted with a class and passed to the custom filter
+         * the selected letter is then highlighted with a class and passed to the names filter
          * @param  {number} index
          * @returns void
          */
