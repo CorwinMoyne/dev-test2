@@ -128,10 +128,7 @@ module.exports = function(grunt) {
                     open: true,
                     middleware: function(connect, options) {
                         return [
-                            modRewrite([
-                                '!/api|assets|\\.html|\\.js|\\.png|\\.jpg|\\.css|\\woff|\\ttf|\\swf$ /index.html',
-                                '^/api/(.*)$ http://localhost:8000/api/$1 [P]'
-                            ]),
+                            modRewrite(['^[^\\.]*$ /index.html [L]']),
                             connect.static('.tmp'),
                             connect().use(
                                 '/bower_components',

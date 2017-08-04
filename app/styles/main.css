@@ -75,12 +75,17 @@ body {
   background: url("../images/icons/search-icon.svg");
   background-size: 16px 16px; }
 
-.letters {
-  letter-spacing: 10px; }
+.letters .selected {
+  background-color: #3f93d3;
+  color: white;
+  border-radius: 50%; }
 
 .letter {
   font-size: 1.2em;
-  cursor: pointer; }
+  cursor: pointer;
+  display: inline-block;
+  padding: 3px;
+  color: lightgray; }
 
 .person {
   padding: 15px;

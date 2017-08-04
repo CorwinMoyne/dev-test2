@@ -5,23 +5,34 @@ module app.communities {
 
     export class CommunitiesController {
 
-        currentIndex: number = 1;
         itemsPerPage: number = 18;
-        peopleToDisplay: any[];
+        limitTo: number = 0;
         alphabet: string[] = 'abcdefghijklmnopqrstuvwxyz'.split('');
+        selectedLetter: string;
+        selectedLetterIndex: number;
 
-        static $inject = ['people'];
-        constructor(private people) {
-            this.setPeopleToDisplay();
-        }
+        static $inject = [
+            'people'
+        ];
+        constructor(
+            public people) { }
 
+        /**
+         * load the next {itemsPerPage} number of items 
+         * @returns void
+         */
         loadMore(): void {
-            this.currentIndex += this.itemsPerPage;
-            this.setPeopleToDisplay();
+            this.limitTo += this.itemsPerPage;
         }
-
-        private setPeopleToDisplay(): void {
-            this.peopleToDisplay = this.people.splice(this.currentIndex, this.itemsPerPage);
+        /**
+         * updates the selected letter when it is clicked
+         * the selected letter is then highlighted with a class and passed to the custom filter
+         * @param  {number} index
+         * @returns void
+         */
+        onLetterClick(index: number): void {
+            this.selectedLetter = this.alphabet[index];
+            this.selectedLetterIndex = index;
         }
     }
     angular.module('app.communities').controller('app.communities.CommunitiesController', CommunitiesController);

@@ -20,12 +20,12 @@
 <div class="container">
     <div class="col-sm-3">
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Filter..." aria-describedby="filter names">
+            <input type="text" class="form-control" ng-model="vm.search" placeholder="Filter..." aria-describedby="filter names">
         </div>
     </div>
     <div class="col-sm-8">
         <div class="letters">
-            <span class="letter" ng-repeat="letter in vm.alphabet">{{letter| uppercase}}</span>
+            <span class="letter" ng-class="{'selected': $index === vm.selectedLetterIndex}" ng-repeat="letter in vm.alphabet track by $index" ng-click="vm.onLetterClick($index)">{{letter| uppercase}}</span>
         </div>
     </div>
     <div class="col-sm-1">
@@ -33,7 +33,7 @@
     </div>
 
     <div class="col-sm-12">
-        <div ng-repeat="person in vm.peopleToDisplay">
+        <div ng-repeat="person in vm.people | filter:vm.search | names:vm.selectedLetter | limitTo:vm.itemsPerPage:vm.limitTo">
             <div class="col-sm-4">
                 <div class="person" ng-click="person.checked = !person.checked">
                     <img class="image img-circle" ng-class="{border: person.checked}" src="../../images/profile.png" alt="{{person.nm}}">

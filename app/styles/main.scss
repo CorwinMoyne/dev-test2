@@ -101,12 +101,19 @@ body {
 }
 
 .letters {
-    letter-spacing: 10px;
+    .selected {
+        background-color: $highlight-color;
+        color: white;
+        border-radius: 50%;
+    }
 }
 
 .letter {
     font-size: 1.2em;
     cursor: pointer;
+    display: inline-block;
+    padding: 3px;
+    color: lightgray;
 }
 
 .person {
