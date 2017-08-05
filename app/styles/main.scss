@@ -102,16 +102,13 @@
         
         .communities-header {
             padding: 20px;
-            min-width: 100%;
-            overflow: auto;
             background-color: $page-header-color;
             margin-bottom: 20px;
             .header-logo {
                 text-align: center;
             }
             .dropdown-container {
-                z-index: 999;
-                position: fixed;
+                text-align: center;
             }
         }
         
@@ -181,13 +178,7 @@
             border-color: red;
         }
         
-        @media (max-width: 480px) {
-            .communities-header {
-                .header-logo {
-                    text-align: center;
-                }
-            }
-        }
+        @media (max-width: 480px) {}
         
         @media (max-width: 767px) {}
         
@@ -201,17 +192,6 @@
                 li {
                     width: 18%;
                     font-size: .7em;
-                }
-            }
-            .communities-header {
-                .dropdown-container {
-                    text-align: center;
-                    width: 50%;
-                }
-            }
-            .filter {
-                .in #search-bar {
-                    width: 100%;
                 }
             }
         }
