@@ -3,6 +3,13 @@
 module app.services {
     'use strict';
 
+    export class HttpRequestType {
+        static GET: string = 'get';
+        static POST: string = 'post';
+        static DELETE: string = 'delete';
+        static PUT: string = 'put';
+    }
+
     export class HttpService {
 
         private loadingCount: number = 0;
@@ -17,48 +24,16 @@ module app.services {
             private $http: ng.IHttpService,
             private $q: ng.IQService) { }
 
-        get(url: string, config?: any): ng.IPromise<any> {
+        request(type: string, url: string, data?: any, config?: any): ng.IPromise<any> {
             this.userFlowLoading();
-            return this.$http.get(url, config).then((response: ng.IHttpPromiseCallbackArg<any>) => {
-                return response;
-            }).catch((response: ng.IHttpPromiseCallbackArg<any>) => {
-                return this.$q.reject(response);
-            }).finally(() => {
-                this.userFlowLoadComplete();
-            });
-        }
-
-        delete(url: string, config?: any): ng.IPromise<any> {
-            this.userFlowLoading();
-            return this.$http.delete(url, config).then((response: ng.IHttpPromiseCallbackArg<any>) => {
-                return response;
-            }).catch((response: ng.IHttpPromiseCallbackArg<any>) => {
-                return this.$q.reject(response);
-            }).finally(() => {
-                this.userFlowLoadComplete();
-            });
-        }
-
-        post(url: string, data: any, config?: any): ng.IPromise<any> {
-            this.userFlowLoading();
-            return this.$http.post(url, data, config).then((response: ng.IHttpPromiseCallbackArg<any>) => {
-                return response;
-            }).catch((response: ng.IHttpPromiseCallbackArg<any>) => {
-                return this.$q.reject(response);
-            }).finally(() => {
-                this.userFlowLoadComplete();
-            });
-        }
-
-        put(url: string, data: any, config?: any): ng.IPromise<any> {
-            this.userFlowLoading();
-            return this.$http.put(url, data, config).then((response: ng.IHttpPromiseCallbackArg<any>) => {
-                return response;
-            }).catch((response: ng.IHttpPromiseCallbackArg<any>) => {
-                return this.$q.reject(response);
-            }).finally(() => {
-                this.userFlowLoadComplete();
-            });
+            return this.$http[type](url, data, config)
+                .then((response: ng.IHttpPromiseCallbackArg<any>) => {
+                    return response;
+                }).catch((response: ng.IHttpPromiseCallbackArg<any>) => {
+                    return this.$q.reject(response);
+                }).finally(() => {
+                    this.userFlowLoadComplete();
+                });
         }
 
         /**

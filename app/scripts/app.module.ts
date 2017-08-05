@@ -8,9 +8,10 @@ module app {
         'ngAnimate',
         'ngTouch',
 
+        'angularSpinner',
+
         'app.home',
         'app.communities',
-
         'app.services'
     ];
     angular.module('app', requiredModules);

@@ -5,13 +5,20 @@ module app.services {
 
     export class PeopleService {
 
-        static $inject: Array<string> = ['app.services.HttpService'];
-        constructor(private httpService: app.services.HttpService) { }
+        static $inject: string[] = [
+            'app.services.HttpService'
+        ];
+        constructor(
+            private httpService: app.services.HttpService) { }
 
         getAllPeople(): ng.IPromise<any> {
-            return this.httpService.get('app/api/people.json').then((response: any) => {
-                return response.data;
-            });
+            return this.httpService.request(app.services.HttpRequestType.GET, 'app/api/people.json')
+                .then((response: any) => {
+                    return response.data;
+                }).catch((error: any) => {
+                    // handle error
+                    // send to log
+                });
         }
     }
     angular.module('app.services').service('app.services.PeopleService', PeopleService);
