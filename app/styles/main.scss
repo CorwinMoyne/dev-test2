@@ -1,201 +1,200 @@
-        $main-nav-color: #1f2532;
-        $highlight-color: #3f93d3;
-        $page-header-color: #eaeaea;
-        $default-green-color: #198074;
-        body,
-        html {
-            margin: 0;
-            padding: 0;
+$main-nav-color: #1f2532;
+$highlight-color: #3f93d3;
+$page-header-color: #eaeaea;
+$default-green-color: #198074;
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.main-container {
+    margin-top: 102px
+}
+
+nav {
+    .navbar-header {
+        float: none;
+        display: inline-block;
+    }
+    .navbar-left {
+        float: left;
+        margin-left: 15px;
+    }
+    .navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+        >li {
+            float: none;
         }
-        
-        body {
-            padding-top: 70px;
-            padding-bottom: 70px;
+        >a {
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
-        
-        .main-container {
-            margin-top: 102px
+    }
+    .collapse.in {
+        display: block !important;
+    }
+    .profile {
+        display: flex;
+        padding: .5em;
+        .fa {
+            width: 32px;
+            height: 32px;
         }
-        
-        nav {
-            .navbar-header {
-                float: none;
-                display: inline-block;
-            }
-            .navbar-left {
-                float: left;
-                margin-left: 15px;
-            }
-            .navbar-right {
-                float: none !important;
-            }
-            .navbar-toggle {
-                display: block;
-            }
-            .navbar-collapse {
-                border-top: 1px solid transparent;
-                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            }
-            .navbar-fixed-top {
-                top: 0;
-                border-width: 0 0 1px;
-            }
-            .navbar-collapse.collapse {
-                display: none!important;
-            }
-            .navbar-nav {
-                float: none!important;
-                margin-top: 7.5px;
-                >li {
-                    float: none;
-                }
-                >a {
-                    padding-top: 10px;
-                    padding-bottom: 10px;
-                }
-            }
-            .collapse.in {
-                display: block !important;
-            }
-            .profile {
-                display: flex;
-                padding: .5em;
-                .fa {
-                    width: 32px;
-                    height: 32px;
-                }
-                .image {
-                    width: 32px;
-                    height: 32px;
-                    border: 2px solid $highlight-color;
-                }
-            }
-            .search-bar {
-                margin: 20px 20px;
-            }
+        .image {
+            width: 32px;
+            height: 32px;
+            border: 2px solid $highlight-color;
         }
-        
-        .main-nav {
-            background: $main-nav-color;
-            padding: 10px 0 5px 0;
-            li {
-                width: 10%;
-                font-size: 1.1em;
-                white-space: nowrap;
-                a {
-                    color: white;
-                }
-            }
-            .list-inline {
-                display: flex;
-                justify-content: center;
-                white-space: nowrap;
-                text-align: -webkit-center;
-                .active {
-                    a {
-                        color: $highlight-color;
-                    }
-                     :after {}
-                }
-            }
+    }
+    .search-bar {
+        margin: 20px 20px;
+    }
+}
+
+.main-nav {
+    background: $main-nav-color;
+    padding: 10px 0 5px 0;
+    li {
+        width: 10%;
+        font-size: 1.1em;
+        white-space: nowrap;
+        a {
+            color: white;
         }
-        
-        .communities-header {
-            padding: 20px;
-            background-color: $page-header-color;
-            margin-bottom: 20px;
-            .header-logo {
-                text-align: center;
-            }
-            .dropdown-container {
-                text-align: center;
-            }
-        }
-        
-        .filter {
-            margin-bottom: 20px;
-            .letters {
-                text-align: center;
-                .selected {
-                    background-color: $highlight-color;
-                    color: white;
-                    border-radius: 50%;
-                }
-            }
-            .letter {
-                font-size: 1.2em;
-                cursor: pointer;
-                display: inline-block;
-                padding-right: 20px;
-                color: lightgray;
-            }
-            .plane {
-                text-align: center;
-            }
-        }
-        
-        .person {
-            padding: 15px;
-            display: flex;
-            .image {
-                width: 48px;
-                height: 48px;
-                position: absolute;
-            }
-            .main {
-                z-index: 0;
-            }
-            .overlay {
-                z-index: 3;
-            }
-            .border {
-                border: 2px solid $default-green-color;
-            }
-            .info {
-                margin: 5px 0px 0px 60px;
-            }
-            .name {
+    }
+    .list-inline {
+        display: flex;
+        justify-content: center;
+        white-space: nowrap;
+        text-align: -webkit-center;
+        .active {
+            a {
                 color: $highlight-color;
             }
-            .email {
-                font-size: .8em;
-            }
         }
-        
-        .btn-default {
-            background-color: $default-green-color;
+    }
+}
+
+.communities-header {
+    padding: 20px;
+    background-color: $page-header-color;
+    margin-bottom: 20px;
+    .header-logo {
+        text-align: center;
+    }
+    .dropdown-container {
+        text-align: center;
+    }
+}
+
+.filter {
+    margin-bottom: 20px;
+    .letters {
+        text-align: center;
+        .selected {
+            background-color: $highlight-color;
             color: white;
-            width: 100%;
+            border-radius: 50%;
         }
-        
-        .error-text {
-            color: red;
-            text-align: center;
-            font-size: 18px
+    }
+    .letter {
+        font-size: 1.2em;
+        cursor: pointer;
+        display: inline-block;
+        padding-right: 20px;
+        color: lightgray;
+    }
+    .plane {
+        text-align: center;
+    }
+}
+
+.person {
+    padding: 15px;
+    display: flex;
+    .image {
+        width: 48px;
+        height: 48px;
+        position: absolute;
+    }
+    .main {
+        z-index: 0;
+    }
+    .overlay {
+        z-index: 3;
+    }
+    .border {
+        border: 2px solid $default-green-color;
+    }
+    .info {
+        margin: 5px 0px 0px 60px;
+    }
+    .name {
+        color: $highlight-color;
+    }
+    .email {
+        font-size: .8em;
+    }
+}
+
+.btn-default {
+    background-color: $default-green-color;
+    color: white;
+    width: 100%;
+}
+
+.error-text {
+    color: red;
+    text-align: center;
+    font-size: 18px
+}
+
+input.ng-invalid.ng-touched {
+    border-color: red;
+}
+
+@media (max-width: 480px) {}
+
+@media (max-width: 767px) {}
+
+@media (min-width: 768px) {}
+
+@media (max-width: 991px) {
+    .main-container {
+        margin-top: 90px;
+    }
+    .main-nav {
+        li {
+            width: 18%;
+            font-size: .7em;
         }
-        
-        input.ng-invalid.ng-touched {
-            border-color: red;
-        }
-        
-        @media (max-width: 480px) {}
-        
-        @media (max-width: 767px) {}
-        
-        @media (min-width: 768px) {}
-        
-        @media (max-width: 991px) {
-            .main-container {
-                margin-top: 90px;
-            }
-            .main-nav {
-                li {
-                    width: 18%;
-                    font-size: .7em;
-                }
-            }
-        }
-        
-        @media (min-width: 992px) {}
-        
-        @media (min-width: 1200px) {}
+    }
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
