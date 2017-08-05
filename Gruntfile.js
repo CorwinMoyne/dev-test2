@@ -42,7 +42,7 @@ module.exports = function(grunt) {
     // Configurable paths for the application
     var appConfig = {
         app: require('./bower.json').appPath || 'app',
-        dist: 'dist'
+        dist: '../server/dist'
     };
 
     // Define the configuration for all the tasks
@@ -76,11 +76,8 @@ module.exports = function(grunt) {
                 tasks: ['newer:jshint:test', 'karma']
             },
             styles: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.scss'],
-                tasks: ['sass'],
-                options: {
-                    livereload: '<%= connect.options.livereload %>'
-                }
+                files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
+                tasks: ['newer:copy:styles', 'autoprefixer']
             },
             gruntfile: {
                 files: ['Gruntfile.js']
@@ -92,7 +89,7 @@ module.exports = function(grunt) {
                 files: [
                     '<%= yeoman.app %>/api/{,{config,src,tests}/**/}/*',
                     '<%= yeoman.app %>/{,*/}*.html',
-                    '.tmp/styles/{,*/}*.scss',
+                    '.tmp/styles/{,*/}*.css',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                 ]
             },
@@ -207,6 +204,9 @@ module.exports = function(grunt) {
         // Empties folders to start fresh
         clean: {
             dist: {
+                options: {
+                    force: true
+                },
                 files: [{
                     dot: true,
                     src: [
@@ -216,7 +216,13 @@ module.exports = function(grunt) {
                     ]
                 }]
             },
-            server: '.tmp'
+            server: '.tmp',
+            heroku: {
+                files: [{
+                    dot: true,
+                    src: 'build'
+                }]
+            }
         },
 
         // Add vendor prefixed styles
@@ -293,6 +299,7 @@ module.exports = function(grunt) {
                             'app/scripts/**/**/*.filter.js',
                             'app/scripts/**/**/*.directive.js',
                             'app/scripts/**/**/*.controller.js',
+                            'app/scripts/**/**/*.component.js',
                             // Exclusions
                             '!app/api/**/*.js',
                             '!app/**/*.spec.js',
@@ -329,7 +336,6 @@ module.exports = function(grunt) {
                     '<%= yeoman.dist %>/scripts/{,*/}*.js',
                     '<%= yeoman.dist %>/styles/{,*/}*.css',
                     '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-                    '!<%= yeoman.dist %>/images/headstones{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
                     '<%= yeoman.dist %>/styles/fonts/*'
                 ]
             }
@@ -360,7 +366,8 @@ module.exports = function(grunt) {
                 '<%= yeoman.dist %>/index.html',
                 '<%= yeoman.dist %>/scripts/**/**/*.html'
             ],
-            css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+            css: ['<%= yeoman.dist %>/styles/**/**/*.css'],
+            js: '<%= yeoman.dist %>/scripts/**/**/*.js',
             options: {
                 assetsDirs: [
                     '<%= yeoman.dist %>',
@@ -375,7 +382,10 @@ module.exports = function(grunt) {
                         [/(styles\/.*.css)/gm, 'Update the HTML to reference our revved CSS']
                     ],
                     css: [
-                        [/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
+                        [/(images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Replacing references to images']
+                    ],
+                    js: [
+                        [/(images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the JS to reference our revved images']
                     ]
                 }
             }
@@ -393,6 +403,15 @@ module.exports = function(grunt) {
         },
 
         svgmin: {
+            options: {
+                plugins: [
+                    { collapseGroups: false },
+                    { removeViewBox: false },
+                    { removeUselessStrokeAndFill: false },
+                    { removeEmptyAttrs: false },
+                    { removeUnknownsAndDefaults: false }
+                ]
+            },
             dist: {
                 files: [{
                     expand: true,
@@ -417,19 +436,6 @@ module.exports = function(grunt) {
                     src: ['*.html', 'scripts/**/**/*.html'],
                     dest: '<%= yeoman.dist %>'
                 }]
-            }
-        },
-
-        ngtemplates: {
-            dist: {
-                options: {
-                    module: 'app',
-                    htmlmin: '<%= htmlmin.dist.options %>',
-                    usemin: 'scripts/scripts.js'
-                },
-                cwd: '<%= yeoman.app %>',
-                src: 'scripts/**/**/*.html',
-                dest: '.tmp/templateCache.js'
             }
         },
 
@@ -463,15 +469,14 @@ module.exports = function(grunt) {
                     cwd: '<%= yeoman.app %>',
                     dest: '<%= yeoman.dist %>',
                     src: [
-                        'api/{{config,src,vendor}/**,index.php,.htaccess}',
-                        'api/routes/*.php',
-                        'api/dbconnect.php',
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'index.html',
                         'scripts/**/**/*.html',
-                        'images/{,*/}*.{webp}',
-                        'fonts/*'
+                        'images/icons/*.svg',
+                        'styles/fonts/{,*/}*.*',
+                        'json/*',
+                        'i18n/**/**'
                     ]
                 }, {
                     expand: true,
@@ -483,6 +488,11 @@ module.exports = function(grunt) {
                     cwd: 'bower_components/bootstrap/dist',
                     src: 'fonts/*',
                     dest: '<%= yeoman.dist %>'
+                }, {
+                    expand: true,
+                    cwd: 'bower_components/font-awesome',
+                    src: 'fonts/*',
+                    dest: '<%= yeoman.dist %>'
                 }]
             },
             styles: {
@@ -490,6 +500,18 @@ module.exports = function(grunt) {
                 cwd: '<%= yeoman.app %>/styles',
                 dest: '.tmp/styles/',
                 src: '{,*/}*.css'
+            },
+            buildDist: {
+                expand: true,
+                cwd: '',
+                dest: 'build',
+                src: 'dist/*'
+            },
+            buildApi: {
+                expand: true,
+                cwd: 'api',
+                dest: 'build',
+                src: '*'
             }
         },
 
@@ -503,8 +525,8 @@ module.exports = function(grunt) {
             ],
             dist: [
                 'copy:styles',
-                'imagemin',
-                'svgmin'
+                'imagemin'
+                // 'svgmin'
             ]
         },
 
@@ -557,6 +579,18 @@ module.exports = function(grunt) {
             },
             phpUpdate: {
                 command: 'make --directory <%= yeoman.app %>/api update'
+            },
+            deploy: {
+                command: [
+                    'cd ..',
+                    'cd server',
+                    'git init',
+                    'git add .',
+                    'git commit -m"deploy"',
+                    'heroku git:remote -a autobay',
+                    'heroku repo:reset -a autobay',
+                    'git push heroku master'
+                ].join('&')
             }
         },
 
@@ -566,22 +600,6 @@ module.exports = function(grunt) {
                 configFile: 'test/karma.conf.js',
                 singleRun: true
             }
-        },
-
-        sass: { // Task
-            dev: { // Target
-                options: {},
-                files: {
-                    '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
-                }
-                // files: [{
-                //     expand: true,
-                //     cwd: '<%= yeoman.app %>/styles',
-                //     src: ['*.scss'],
-                //     dest: '<%= yeoman.app %>',
-                //     ext: '.css'
-                // }]
-            }
         }
     });
 
@@ -590,8 +608,6 @@ module.exports = function(grunt) {
         if (target === 'dist') {
             return grunt.task.run([
                 'build',
-                'configureProxies',
-                'php:dist',
                 'connect:dist:keepalive'
             ]);
         }
@@ -599,7 +615,6 @@ module.exports = function(grunt) {
         grunt.task.run([
             'clean:server',
             'ts',
-            'sass',
             'wiredep',
             'injector',
             'concurrent:server',
@@ -617,7 +632,6 @@ module.exports = function(grunt) {
     grunt.registerTask('test', [
         'clean:server',
         'ts',
-        'sass',
         'concurrent:test',
         'autoprefixer',
         'connect:test',
@@ -627,7 +641,6 @@ module.exports = function(grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'ts',
-        'sass',
         'wiredep',
         'injector',
         'useminPrepare',

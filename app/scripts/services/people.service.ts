@@ -12,7 +12,7 @@ module app.services {
             private httpService: app.services.HttpService) { }
 
         getAllPeople(): ng.IPromise<any> {
-            return this.httpService.request(app.services.HttpRequestType.GET, 'app/api/people.json')
+            return this.httpService.request(app.services.HttpRequestType.GET, '../api/people.json')
                 .then((response: any) => {
                     return response.data;
                 }).catch((error: any) => {

@@ -49,7 +49,10 @@
             </div>
             <div class="row">
                 <div class="col-md-12 form-group">
-                    <div ng-repeat="person in vm.people | filter:vm.search | names:vm.selectedLetter | limitTo:vm.itemsPerPage:vm.limitTo">
+                    <div ng-show="vm.filteredResult.length === 0">
+                        No people found.
+                    </div>
+                    <div ng-repeat="person in vm.filteredResult = (vm.people | filter:vm.search | names:vm.selectedLetter | limitTo:vm.itemsPerPage:vm.limitTo)">
                         <div class="col-xs-6 col-md-3">
                             <div class="person" class="form-control" ng-click="person.checked = !person.checked">
                                 <img class="image img-circle" ng-class="{border: person.checked}" src="../../images/profile.png" alt="{{person.nm}}">
@@ -69,7 +72,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2 col-md-offset-5 form-group">
+                <div ng-hide="vm.filteredResult.length === 0" class="col-md-2 col-md-offset-5 form-group">
                     <button type="button" class="btn btn-default" ng-click="vm.loadMore()">Load More</button>
                 </div>
             </div>
