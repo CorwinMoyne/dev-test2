@@ -1,0 +1,74 @@
+{
+    "apiResult": "success",
+    "class": "iq4.model.QueryResult",
+    "itemType": null,
+    "offset": 0,
+    "pageSize": 10,
+    "rowType": null,
+    "rows": [
+        {
+            "class": "iq4.dto.JobFamilyPathwaysDTO",
+            "description": "Maintains application systems that have completed the development stage and are running in the daily operations of the firm; provides production support for all internally and externally developed systems and applications, ensuring that service is delivered in an uninterrupted manner.\n",
+            "jobFamily": "Applications Support",
+            "jobFamilyId": 39,
+            "needs": 72,
+            "sharedNeedsmore": 3,
+            "sharedProficient": 9
+        },
+        {
+            "class": "iq4.dto.JobFamilyPathwaysDTO",
+            "description": "Responsible for technical planning within the technology organization; architects interpret business strategy into target state Architecture utilizing patterns, cost models, and industry best practices.\n",
+            "jobFamily": "Architecture",
+            "jobFamilyId": 40,
+            "needs": 10,
+            "sharedNeedsmore": 0,
+            "sharedProficient": 4
+        },
+        {
+            "class": "iq4.dto.JobFamilyPathwaysDTO",
+            "description": "Cybersecurity protects the firm's people, clients, and information assets ensuring the safety and soundness of the firm's business operations.\n",
+            "jobFamily": "Cybersecurity",
+            "jobFamilyId": 42,
+            "needs": 8,
+            "sharedNeedsmore": 4,
+            "sharedProficient": 74
+        },
+        {
+            "class": "iq4.dto.JobFamilyPathwaysDTO",
+            "description": "Responsible for the design, development, testing , integration, operation and support of infrastructure services that meet stated business requirements and adhere to coding best practices and architecture standards.\n",
+            "jobFamily": "Infrastructure Development",
+            "jobFamilyId": 44,
+            "needs": 6,
+            "sharedNeedsmore": 0,
+            "sharedProficient": 3
+        },
+        {
+            "class": "iq4.dto.JobFamilyPathwaysDTO",
+            "description": "Builds strong working relationships with clients and businesses to effectively provide end-to-end infrastructure service related to production assurance, connectivity services and service improvement. Level 2 and Level 3 support.\n",
+            "jobFamily": "Infrastructure Support",
+            "jobFamilyId": 46,
+            "needs": 4,
+            "sharedNeedsmore": 0,
+            "sharedProficient": 0
+        },
+        {
+            "class": "iq4.dto.JobFamilyPathwaysDTO",
+            "description": "Primarily responsible for the overall strategic organizational management for IT teams; most experienced members who spend over 50% of their time on organizational management and skill sets are fungible across all Job Families.\n",
+            "jobFamily": "IT Organizational Management",
+            "jobFamilyId": 47,
+            "needs": 12,
+            "sharedNeedsmore": 0,
+            "sharedProficient": 0
+        },
+        {
+            "class": "iq4.dto.JobFamilyPathwaysDTO",
+            "description": "Technology Control Officers ensure the robust control, security and resiliency of the firm's computing environment, protect customer and employee confidential information, and comply with regulatory requirements globally.\n",
+            "jobFamily": "Technology Controls",
+            "jobFamilyId": 51,
+            "needs": 1,
+            "sharedNeedsmore": 0,
+            "sharedProficient": 0
+        }
+    ],
+    "totalRows": 10
+}

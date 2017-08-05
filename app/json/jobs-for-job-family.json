@@ -1,0 +1,71 @@
+{
+    "apiResult": "success",
+    "class": "iq4.model.QueryResult",
+    "itemType": null,
+    "offset": 0,
+    "pageSize": 10,
+    "rowType": null,
+    "rows": [
+        {
+            "class": "iq4.dto.JobPayGradeUserPathwaysDTO",
+            "distance": 2.0,
+            "jobId": 193,
+            "jobName": "Copy of EP- Cyber Associate",
+            "jobPayGrade": "602",
+            "needs": 0,
+            "sharedNeedsmore": 1,
+            "sharedProficient": 18,
+            "userId": 6,
+            "userPayGrade": "601"
+        },
+        {
+            "class": "iq4.dto.JobPayGradeUserPathwaysDTO",
+            "distance": 2.0,
+            "jobId": 190,
+            "jobName": "EP- Cyber Associate",
+            "jobPayGrade": "601",
+            "needs": 0,
+            "sharedNeedsmore": 1,
+            "sharedProficient": 19,
+            "userId": 6,
+            "userPayGrade": "601"
+        },
+        {
+            "class": "iq4.dto.JobPayGradeUserPathwaysDTO",
+            "distance": 2.0,
+            "jobId": 190,
+            "jobName": "EP- Cyber Associate",
+            "jobPayGrade": "602",
+            "needs": 0,
+            "sharedNeedsmore": 1,
+            "sharedProficient": 19,
+            "userId": 6,
+            "userPayGrade": "601"
+        },
+        {
+            "class": "iq4.dto.JobPayGradeUserPathwaysDTO",
+            "distance": 2.0,
+            "jobId": 193,
+            "jobName": "Copy of EP- Cyber Associate",
+            "jobPayGrade": "601",
+            "needs": 0,
+            "sharedNeedsmore": 1,
+            "sharedProficient": 18,
+            "userId": 6,
+            "userPayGrade": "601"
+        },
+        {
+            "class": "iq4.dto.JobPayGradeUserPathwaysDTO",
+            "distance": 23.643180835073778,
+            "jobId": 149,
+            "jobName": "proficiencies-save",
+            "jobPayGrade": "602",
+            "needs": 8,
+            "sharedNeedsmore": 0,
+            "sharedProficient": 0,
+            "userId": 0,
+            "userPayGrade": null
+        }
+    ],
+    "totalRows": 6
+}
