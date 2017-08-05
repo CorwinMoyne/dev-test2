@@ -1,62 +1,82 @@
 <div class="communities-header">
-    <div class="row">
-        <div class="col-xs-12 col-md-2">
+    <div class="container-fluid">
+        <div class="col-xs-6 col-md-2">
             <div class="header-logo">
                 <img src="../../../images/communities-logo.png" alt="communities-logo">
             </div>
         </div>
+
+        <div class="col-xs-6 hidden-md hidden-lg">
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <div class="fa fa-cog fa-3x dropdown-toggle" data-toggle="dropdown" id="menu" aria-hidden="true"></div>
+                    <ul class="dropdown-menu" aria-labelledby="menu">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <ul class="dropdown-menu">
+            <li class="">
+                <a href="" data-toggle="collapse" data-target=".navbar-collapse.in">hello</a>
+            </li>
+        </ul>
+
         <div class="col-xs-12 col-md-8">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu nulla ligula. Etiam vulputate lobortis nunc, non tempus libero dapibus a. Sed non cursus odio. Vivamus vitae justo eu metus sagittis aliquet in ultrices dolor. Sed vitae auctor quam,
             nec commodo diam. Ut iaculis metus ac tempor ultrices. Sed sagittis elit vel mi varius, a porttitor urna malesuada. Nullam tincidunt velit tincidunt pretium vehicula. Pellentesque finibus hendrerit ligula, sit amet tincidunt ex varius id.
         </div>
-        <div class="col-xs-12 col-md-2">
-            <div class="cog">
-                <div class="fa fa-cog fa-2x dropdown-toggle" data-toggle="dropdown" id="menu1" aria-hidden="true"></div>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
-                </ul>
+
+        <div class="col-md-2 hidden-xs hidden-sm">
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <div class="fa fa-cog fa-3x dropdown-toggle" data-toggle="dropdown" id="menu" aria-hidden="true"></div>
+                    <ul class="dropdown-menu" aria-labelledby="menu">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <div class="container-fluid">
     <div class="filter">
-        <div class="row">
-            <div class="col-xs-6 col-md-3">
-                <div class="input-group">
-                    <input type="text" class="form-control" ng-model="vm.search" placeholder="Filter..." aria-describedby="filter names">
+        <form class="form" name="form" role="form" novalidate>
+            <div class="row">
+                <div class="col-md-2 form-group">
+                    <label class="sr-only" for="nameSearch">Name Search</label>
+                    <input type="text" name="nameSearch" class="form-control" placeholder="Filter..." ng-model="vm.search" ng-pattern="/^[a-zA-Z]*$/">
+                    <div class="error-text" ng-show="form.nameSearch.$error.pattern">Please enter letters only</div>
+                </div>
+                <div class="col-md-8 form-group">
+                    <div class="letters">
+                        <span class="letter" class="form-control" ng-class="{'selected': $index === vm.selectedLetterIndex}" ng-repeat="letter in vm.alphabet track by $index" ng-click="vm.onLetterClick($index)">{{letter| uppercase}}</span>
+                    </div>
+                </div>
+                <div class="col-md-2 form-group">
+                    <div class="plane">
+                        <span class="fa fa-paper-plane fa-2x" class="form-control" data-toggle="tooltip" title="Email selected members" aria-hidden="true"></span>
+                    </div>
                 </div>
             </div>
-            <div class="hidden-md hidden-lg col-xs-6">
-                <div class="plane">
-                    <span class="fa fa-paper-plane fa-2x" data-toggle="tooltip" title="Email selected members" aria-hidden="true"></span>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-6">
-                <div class="letters">
-                    <span class="letter" ng-class="{'selected': $index === vm.selectedLetterIndex}" ng-repeat="letter in vm.alphabet track by $index" ng-click="vm.onLetterClick($index)">{{letter| uppercase}}</span>
-                </div>
-            </div>
-            <div class="hidden-xs hidden-sm col-md-3">
-                <div class="plane">
-                    <span class="fa fa-paper-plane fa-2x" data-toggle="tooltip" title="Email selected members" aria-hidden="true"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div ng-repeat="person in vm.people | filter:vm.search | names:vm.selectedLetter | limitTo:vm.itemsPerPage:vm.limitTo">
-            <div class="col-xs-6 col-md-3">
-                <div class="person" ng-click="person.checked = !person.checked">
-                    <img class="image img-circle" ng-class="{border: person.checked}" src="../../images/profile.png" alt="{{person.nm}}">
-                    <img ng-if="!person.checked" class="overlay image img-circle" src="../../images/unchecked.png">
-                    <img ng-if="person.checked" class="overlay image img-circle" src="../../images/checked.png">
-                    <span class="info">
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <div ng-repeat="person in vm.people | filter:vm.search | names:vm.selectedLetter | limitTo:vm.itemsPerPage:vm.limitTo">
+                        <div class="col-xs-6 col-md-3">
+                            <div class="person" class="form-control" ng-click="person.checked = !person.checked">
+                                <img class="image img-circle" ng-class="{border: person.checked}" src="../../images/profile.png" alt="{{person.nm}}">
+                                <img ng-if="!person.checked" class="overlay image img-circle" src="../../images/unchecked.png">
+                                <img ng-if="person.checked" class="overlay image img-circle" src="../../images/checked.png">
+                                <span class="info">
                         <div class="name">
                             {{person.nm}}
                         </div>
@@ -64,12 +84,16 @@
                             fake@email.com
                         </div>
                     </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="col-xs-12 col-md-2 col-sm-offset-5">
-        <button type="button" class="btn btn-default" ng-click="vm.loadMore()">Load More</button>
+            <div class="row">
+                <div class="col-md-2 col-md-offset-5 form-group">
+                    <button type="button" class="btn btn-default" ng-click="vm.loadMore()">Load More</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

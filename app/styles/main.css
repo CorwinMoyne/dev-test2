@@ -1,3 +1,8 @@
+body,
+html {
+  margin: 0;
+  padding: 0; }
+
 body {
   padding-top: 70px;
   padding-bottom: 70px; }
@@ -69,8 +74,11 @@ nav .search-bar {
   overflow: auto;
   background-color: #eaeaea;
   margin-bottom: 20px; }
-  .communities-header .cog .dropdown-menu {
-    position: relative; }
+  .communities-header .header-logo {
+    text-align: center; }
+  .communities-header .dropdown-container {
+    z-index: 999;
+    position: fixed; }
 
 .filter {
   margin-bottom: 20px; }
@@ -84,7 +92,7 @@ nav .search-bar {
     font-size: 1.2em;
     cursor: pointer;
     display: inline-block;
-    padding: 3px;
+    padding-right: 20px;
     color: lightgray; }
   .filter .plane {
     text-align: center; }
@@ -114,10 +122,16 @@ nav .search-bar {
   color: white;
   width: 100%; }
 
+.error-text {
+  color: red;
+  text-align: center;
+  font-size: 18px; }
+
+input.ng-invalid.ng-touched {
+  border-color: red; }
+
 @media (max-width: 480px) {
   .communities-header .header-logo {
-    text-align: center; }
-  .communities-header .cog {
     text-align: center; } }
 @media (max-width: 991px) {
   .main-container {
@@ -125,6 +139,13 @@ nav .search-bar {
 
   .main-nav li {
     width: 18%;
-    font-size: .7em; } }
+    font-size: .7em; }
+
+  .communities-header .dropdown-container {
+    text-align: center;
+    width: 50%; }
+
+  .filter .in #search-bar {
+    width: 100%; } }
 
 /*# sourceMappingURL=main.css.map */

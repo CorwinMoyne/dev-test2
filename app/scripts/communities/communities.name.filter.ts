@@ -5,12 +5,12 @@ module app.communities {
 	
 	export class NameFilter {
 		public static Factory() {
-			return(input: any[], letter: string): any => {
+			return(names: any[], letter: string): any => {
 				if(!letter) {
-					return input;
+					return names;
 				}
-				let filteredNames = input;
-				filteredNames = input.filter(name => {
+				let filteredNames = names;
+				filteredNames = names.filter(name => {
 					return name.nm.charAt(0).toUpperCase() === letter.toUpperCase();
 				});
 				return filteredNames;
