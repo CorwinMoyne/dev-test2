@@ -600,6 +600,21 @@ module.exports = function(grunt) {
                 configFile: 'test/karma.conf.js',
                 singleRun: true
             }
+        },
+
+        sass: { // Task
+            dev: { // Target
+                options: { // Target options
+                    style: 'expanded'
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/styles',
+                    src: ['*.scss', '!*_'],
+                    dest: '<%= yeoman.app %>/styles',
+                    ext: '.css'
+                }]
+            }
         }
     });
 
@@ -615,6 +630,7 @@ module.exports = function(grunt) {
         grunt.task.run([
             'clean:server',
             'ts',
+            'sass',
             'wiredep',
             'injector',
             'concurrent:server',
@@ -632,6 +648,7 @@ module.exports = function(grunt) {
     grunt.registerTask('test', [
         'clean:server',
         'ts',
+        'sass',
         'concurrent:test',
         'autoprefixer',
         'connect:test',
@@ -641,6 +658,7 @@ module.exports = function(grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'ts',
+        'sass',
         'wiredep',
         'injector',
         'useminPrepare',

@@ -6,7 +6,7 @@ module app.communities {
 	export class NameFilter {
 		public static Factory() {
 			return(names: any[], letter: string): any => {
-				if(!letter) {
+				if(!names || !letter) {
 					return names;
 				}
 				let filteredNames = names;
