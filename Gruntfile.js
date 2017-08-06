@@ -76,8 +76,11 @@ module.exports = function(grunt) {
                 tasks: ['newer:jshint:test', 'karma']
             },
             styles: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-                tasks: ['newer:copy:styles', 'autoprefixer']
+                files: ['<%= yeoman.app %>/styles/{,*/}*.scss'],
+                tasks: ['sass'],
+                options: {
+                    livereload: '<%= connect.options.livereload %>'
+                }
             },
             gruntfile: {
                 files: ['Gruntfile.js']

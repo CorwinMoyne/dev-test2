@@ -1,0 +1,17 @@
+{
+    "globalDevDependencies": {
+        "grunt": "registry:dt/grunt#0.4.0+20170118033846",
+        "karma": "registry:dt/karma#0.13.9+20160811111312",
+        "karma-jasmine": "registry:dt/karma-jasmine#0.0.0+20170207112528",
+        "phantomjs": "registry:dt/phantomjs#1.9.0+20161229235626"
+    },
+    "globalDependencies": {
+        "angular-spinner": "registry:dt/angular-spinner#0.5.1+20161130215418",
+        "bootstrap": "registry:dt/bootstrap#3.3.5+20160726204056",
+        "d3": "github:DefinitelyTyped/DefinitelyTyped/d3/d3.d.ts#6e2f2280ef16ef277049d0ce8583af167d586c59",
+        "node": "registry:dt/node#7.0.0+20170322231424"
+    },
+    "dependencies": {
+        "angular": "registry:dt/angular#1.6.0+20170321201455"
+    }
+}

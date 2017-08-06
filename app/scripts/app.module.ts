@@ -11,8 +11,8 @@ module app {
         'angularSpinner',
 
         'app.home',
-        'app.communities',
-        'app.services'
+        'app.services',
+        'app.charts'
     ];
     angular.module('app', requiredModules);
 }

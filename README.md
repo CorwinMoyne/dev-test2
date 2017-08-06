@@ -15,6 +15,13 @@ To run project:
 ===============
 grunt serve
 
+*If you get the following error when you run grunt serve:
+error TS2305: Module 'angular' has no exported member 'ui'
+
+add this line above //grunt-start
+
+/// <reference path="./tsd.d.ts" />
+
 To run tests:
 ===============
 grunt test
@@ -26,3 +33,8 @@ grunt build
 To build project and then serve:
 ===============
 grunt serve:dist
+
+
+
+
+

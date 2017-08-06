@@ -1,51 +1,193 @@
-/*
-Error: File to import not found or unreadable: communities.
-        on line 1 of app/styles/main.scss
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
 
-1: @import 'communities';
-2: $main-nav-color: #1f2532;
-3: $highlight-color: #3f93d3;
-4: $page-header-color: #eaeaea;
-5: $default-green-color: #198074;
-6: body,
+body {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
 
-Backtrace:
-app/styles/main.scss:1
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/import_node.rb:67:in `rescue in import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/import_node.rb:45:in `import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/import_node.rb:28:in `imported_file'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/import_node.rb:37:in `css_import?'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:314:in `visit_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:161:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:10:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/engine.rb:307:in `render_with_sourcemap'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:391:in `run'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:63:in `process_result'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/base.rb:52:in `parse'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/base.rb:19:in `parse!'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/bin/sass:13:in `<top (required)>'
-C:/Ruby24-x64/bin/sass:22:in `load'
-C:/Ruby24-x64/bin/sass:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: communities.\A         on line 1 of app/styles/main.scss\A \A 1: @import 'communities';\A 2: $main-nav-color: #1f2532;\A 3: $highlight-color: #3f93d3;\A 4: $page-header-color: #eaeaea;\A 5: $default-green-color: #198074;\A 6: body,"; }
+.main-container {
+  margin-top: 102px;
+}
+
+nav .navbar-brand {
+  position: absolute;
+  width: 100%;
+  left: 45%;
+}
+nav .navbar-header {
+  float: none;
+  display: inline-block;
+}
+nav .navbar-left {
+  float: left;
+  margin-left: 15px;
+}
+nav .navbar-right {
+  float: none !important;
+}
+nav .navbar-toggle {
+  display: block;
+}
+nav .navbar-collapse {
+  border-top: 1px solid transparent;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+nav .navbar-fixed-top {
+  top: 0;
+  border-width: 0 0 1px;
+}
+nav .navbar-collapse.collapse {
+  display: none !important;
+}
+nav .navbar-nav {
+  float: none !important;
+  margin-top: 7.5px;
+}
+nav .navbar-nav > li {
+  float: none;
+}
+nav .navbar-nav > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+nav .collapse.in {
+  display: block !important;
+}
+nav .profile {
+  display: flex;
+  padding: .5em;
+}
+nav .profile .fa {
+  width: 32px;
+  height: 32px;
+}
+nav .profile .image {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #3f93d3;
+}
+nav .search-bar {
+  margin: 20px 20px;
+}
+
+.main-nav {
+  background: #1f2532;
+  padding: 10px 0 5px 0;
+}
+.main-nav li {
+  width: 10%;
+  font-size: 1.1em;
+  white-space: nowrap;
+}
+.main-nav li a {
+  color: white;
+}
+.main-nav .list-inline {
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+  text-align: -webkit-center;
+}
+.main-nav .list-inline .active a {
+  color: #3f93d3;
+}
+
+.communities-header {
+  padding: 20px;
+  background-color: #eaeaea;
+  margin-bottom: 20px;
+}
+.communities-header .header-logo {
+  text-align: center;
+}
+.communities-header .dropdown-container {
+  text-align: center;
+}
+
+.filter {
+  margin-bottom: 20px;
+}
+.filter .letters {
+  text-align: center;
+}
+.filter .letters .selected {
+  background-color: #3f93d3;
+  color: white;
+  border-radius: 50%;
+}
+.filter .letter {
+  font-size: 1.2em;
+  cursor: pointer;
+  display: inline-block;
+  padding-right: 20px;
+  color: lightgray;
+}
+.filter .plane {
+  text-align: center;
+}
+
+.person {
+  padding: 15px;
+  display: flex;
+}
+.person .image {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+}
+.person .main {
+  z-index: 0;
+}
+.person .overlay {
+  z-index: 3;
+}
+.person .border {
+  border: 2px solid #198074;
+}
+.person .info {
+  margin: 5px 0px 0px 60px;
+}
+.person .name {
+  color: #3f93d3;
+}
+.person .email {
+  font-size: .8em;
+}
+
+.btn-default {
+  background-color: #198074;
+  color: white;
+  width: 100%;
+}
+
+.error-text {
+  color: red;
+  text-align: center;
+  font-size: 18px;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+iq-stacked-bar-chart {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 991px) {
+  .main-container {
+    margin-top: 90px;
+  }
+
+  .main-nav li {
+    width: 18%;
+    font-size: .7em;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

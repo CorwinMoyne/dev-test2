@@ -1,9 +1,9 @@
 /// <reference path="../../../typings/_reference.ts" />
 
-module app.communities {
+module app.charts {
     'use strict';
 
     var requiredModules: string[] = [];
     
-    angular.module('app.communities', requiredModules);
+    angular.module('app.charts', requiredModules);
 }

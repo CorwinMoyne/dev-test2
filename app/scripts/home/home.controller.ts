@@ -5,8 +5,22 @@ module app.home {
 
     export class HomeController {
 
-        static $inject = [];
-        constructor() { }
+        businessUnit: string = 'technology';
+
+        static $inject = [
+            'allJobs',
+            'jobfamilies',
+            'jobForJobFamilies',
+            'pathway'
+        ];
+        constructor(
+            public allJobs,
+            public jobfamilies,
+            public jobForJobFamilies,
+            public pathway) {
+                // console.log(this.jobfamilies);
+                
+            }
     }
     angular.module('app.home').controller('app.home.HomeController', HomeController);
 }

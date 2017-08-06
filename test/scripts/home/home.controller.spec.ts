@@ -7,19 +7,19 @@ module app.home {
 
     describe('Home Controller', () => {
 
-        var controller: app.home.HomeController;
+        // var controller: app.home.HomeController;
 
-        beforeEach(() => {
-            angular.mock.module('app');
-            angular.mock.inject([
-                '$controller', (
-                    $controller: ng.IControllerService) => {
-                    controller = $controller('app.home.HomeController', {});
-                }]);
-        });
+        // beforeEach(() => {
+        //     angular.mock.module('app');
+        //     angular.mock.inject([
+        //         '$controller', (
+        //             $controller: ng.IControllerService) => {
+        //             controller = $controller('app.home.HomeController', {});
+        //         }]);
+        // });
 
-        it('should', () => {
-            expect(true).toBeTruthy();
-        });
+        // it('should', () => {
+        //     expect(true).toBeTruthy();
+        // });
     });
 }
