@@ -6,10 +6,12 @@ module app.charts {
     class StackedBarChart implements ng.IDirective {
         restrict: string = 'E';
         scope: any = {
-            data: '='
+            data: '=',
+            title: '=?'
         };
         link: ng.IDirectiveLinkFn = (scope: ng.IScope, element: any) => {
             let data = scope['data'];
+            let title = scope['title'];
             let colours = ['#1d8074', '#e0e76f', '#e0e2e0'];
             let types = ['sharedProficient', 'sharedNeedsmore', 'needs'];
             let layers = d3.layout.stack()(types.map((type) => {
@@ -17,16 +19,16 @@ module app.charts {
                     return { x: i, y: d[type] };
                 });
             }));
-            let margin = { top: 40, right: 10, bottom: 20, left: 50 };
+            let margin = { top: 80, right: 10, bottom: 20, left: 50 };
             let yGroupMax = d3.max(layers, (layer) => { return d3.max(layer, (d) => { return d.y; }); })
             let yStackMax = d3.max(layers, (layer) => { return d3.max(layer, (d) => { return d.y0 + d.y; }); });
             let labels = data.map((d) => { return d.jobFamily; });
 
             draw();
-            // d3.select(window).on('resize', draw);
 
             function draw(): void {
-                let width = (screen.width / 4) - margin.left - margin.right;
+                d3.selectAll("iq-stacked-bar-chart > *").remove();
+                let width = 622 - margin.left - margin.right;
                 let height = 533 - margin.top - margin.bottom;
 
                 let yScale = d3.scale.ordinal()
@@ -39,8 +41,22 @@ module app.charts {
 
                 let svg = d3.select(element[0])
                     .append('svg')
-                    .attr('width', width + margin.left + margin.right)
+                    .attr('width', '100%')
                     .attr('height', height + margin.top + margin.bottom)
+                    .attr('class', 'title');
+
+                svg.selectAll('.title')
+                    .data(title)
+                    .enter()
+                    .append('text')
+                    .text(title)
+                    .attr({
+                        'text-anchor': 'start',
+                        'y': 10,
+                        'x': 0
+                    })
+                    .style('fill', 'grey')
+                    .style('font-weight', 'bold');
 
                 let layer = svg.selectAll('.layer')
                     .data(layers)

@@ -18,7 +18,7 @@ module app.home {
             public jobfamilies,
             public jobForJobFamilies,
             public pathway) {
-                // console.log(this.jobfamilies);
+                console.log(this.jobForJobFamilies);
                 
             }
     }
