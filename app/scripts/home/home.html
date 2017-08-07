@@ -2,23 +2,64 @@
     <h2>My Career Path</h3>
         <div class="row">
             <div class="col-md-3">
-                <div class="well">
-                    <h4>Business Unit</h4>
-                    <div class="form-group">
-                        <label class="sr-only" for="unit">Technology</label>
-                        <select name="unit" ng-model="vm.businessUnit" class="form-control">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <h4>Business Unit</h4>
+                            <label class="sr-only" for="unit">Technology</label>
+                            <select name="unit" ng-model="vm.businessUnit" class="form-control">
 						    <option value="technology">Technology</option>
 					    </select>
+                        </div>
                     </div>
                     <div class="form-group" id="jobFamily">
-                        <iq-stacked-bar-chart data="vm.jobfamilies.rows" label-key="'jobFamily'" margin-left="'10'" selector="'jobFamily'" title="'Job Family'"></iq-stacked-bar-chart>
+                        <iq-stacked-bar-chart data="vm.jobfamilies.rows" label-key="'jobFamily'" margin-left="'10'" selector="'jobFamily'" title="vm.title(0)"></iq-stacked-bar-chart>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="well">
-                    <div class="form-group" id="jobFor">
-                        <iq-stacked-bar-chart data="vm.jobForJobFamilies.rows" label-key="'jobName'" margin-left="'200'" selector="'jobFor'" show-axis="true"></iq-stacked-bar-chart>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group" id="jobFor">
+                            <h4>Cybersecurity</h4>
+                            <iq-stacked-bar-chart data="vm.jobForJobFamilies.rows" label-key="'jobName'" margin-left="'10'" selector="'jobFor'" title="vm.title(1)" show-axis="true"></iq-stacked-bar-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Legend</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div>
+                            <i class="fa fa-circle green small align-middle" aria-hidden="true"></i>
+                            <span>
+                                <label>Shared KSAs at proficiency</label>
+                            </span>
+                        </div>
+                        <div class="ksa">
+                            This is many KSAs (Knowledge, Skills & Abilities) you have in common with the role you are looking at where your proficiency level is below the required proficiancy level for that role.
+                        </div>
+                        <div>
+                            <i class="fa fa-circle gold small align-middle" aria-hidden="true"></i>
+                            <span>
+                                <label>Shared KSAs at proficiency</label>
+                            </span>
+                        </div>
+                        <div class="ksa">
+                            This is many KSAs (Knowledge, Skills & Abilities) you have in common with the role you are looking at where your proficiency level meets or exceeds the required proficiancy level for that role.
+                        </div>
+                        <div>
+                            <i class="fa fa-circle grey small align-middle" aria-hidden="true"></i>
+                            <span>
+                                <label>Shared KSAs at proficiency</label>
+                            </span>
+                        </div>
+                        <div class="ksa">
+                            This is many KSAs (Knowledge, Skills & Abilities) required by the role you do not have yet.
+                        </div>
                     </div>
                 </div>
             </div>

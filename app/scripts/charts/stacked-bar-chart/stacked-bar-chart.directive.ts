@@ -41,18 +41,9 @@ module app.charts {
             draw();
 
             function draw(): void {
-                // d3.selectAll("iq-stacked-bar-chart > *").remove();
-                // console.log(parseInt(d3.select(selector).style('width'), 10));
                 let margin = { top: 10, right: 10, bottom: 10, left: 200 };
                 let width = parseInt(d3.select(selector).style('width'), 10) - marginLeft - margin.right;
                 let height = 533 - margin.top - margin.bottom;
-
-                var y = d3.scale.ordinal()
-                    .domain(labels)
-                    .rangePoints([0, height]);
-
-
-
 
                 let yScale = d3.scale.ordinal()
                     .domain(d3.range(data.length))
@@ -61,14 +52,6 @@ module app.charts {
                 let xScale = d3.scale.linear()
                     .domain([0, yStackMax])
                     .range([0, width]);
-
-                // console.log(yScale(3));
-                console.log(y.range());
-
-                // console.log(y(labels[4]));
-
-
-
 
                 var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
@@ -118,6 +101,28 @@ module app.charts {
                         }
                     });
 
+                // layer.selectAll('text')
+                //     .data(layers[0])
+                //     .enter()
+                //     .append('text')
+                //     .text((d, i) => {
+                //         return labels[i];
+                //     })
+                //     .attr({
+                //         'text-anchor': 'start',
+                //         'y': (d, i) => {
+                //             return yScale(d.x) - 10;
+                //         },
+                //         'x': (d) => { return xScale(d.y0); }
+                //     }).style('fill', 'grey');
+
+                if (!!showAxis) {
+                    svg.insert("g", ":first-child")
+                        .attr("class", "axis-horizontal")
+                        .attr("transform", "translate(" + (3) + "," + (height - margin.bottom) + ")")
+                        .call(xAxis);
+                }
+
                 layer.selectAll('text')
                     .data(layers[0])
                     .enter()
@@ -130,15 +135,19 @@ module app.charts {
                         'y': (d, i) => {
                             return yScale(d.x) - 10;
                         },
-                        'x': (d) => { return xScale(d.y0); }
+                        'x': 0
                     }).style('fill', 'grey');
 
-                if (!!showAxis) {
-                    svg.insert("g", ":first-child")
-                        .attr("class", "axisHorizontal")
-                        .attr("transform", "translate(" + (3) + "," + (height - margin.bottom) + ")")
-                        .call(xAxis);
-                }
+                // bars.append("rect")
+                //     .attr("class", "bar")
+                //     .attr("y", function (d) {
+                //         return y(d.name);
+                //     })
+                //     .attr("height", y.rangeBand())
+                //     .attr("x", 0)
+                //     .attr("width", function (d) {
+                //         return x(d.value);
+                //     });
 
 
 

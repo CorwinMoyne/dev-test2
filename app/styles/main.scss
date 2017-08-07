@@ -1,7 +1,8 @@
-$main-nav-color: #1f2532;
+$default-green: #1d8074;
+$default-gold: #e0e76f;
+$default-grey: #e0e2e0;
 $highlight-color: #3f93d3;
-$page-header-color: #eaeaea;
-$default-green-color: #198074;
+$main-nav-color: #1f2532;
 body,
 html {
     margin: 0;
@@ -104,87 +105,34 @@ nav {
     }
 }
 
-.communities-header {
-    padding: 20px;
-    background-color: $page-header-color;
-    margin-bottom: 20px;
-    .header-logo {
-        text-align: center;
-    }
-    .dropdown-container {
-        text-align: center;
-    }
-}
-
-.filter {
-    margin-bottom: 20px;
-    .letters {
-        text-align: center;
-        .selected {
-            background-color: $highlight-color;
-            color: white;
-            border-radius: 50%;
-        }
-    }
-    .letter {
-        font-size: 1.2em;
-        cursor: pointer;
-        display: inline-block;
-        padding-right: 20px;
-        color: lightgray;
-    }
-    .plane {
-        text-align: center;
-    }
-}
-
-.person {
-    padding: 15px;
-    display: flex;
-    .image {
-        width: 48px;
-        height: 48px;
-        position: absolute;
-    }
-    .main {
-        z-index: 0;
-    }
-    .overlay {
-        z-index: 3;
-    }
-    .border {
-        border: 2px solid $default-green-color;
-    }
-    .info {
-        margin: 5px 0px 0px 60px;
-    }
-    .name {
-        color: $highlight-color;
-    }
-    .email {
-        font-size: .8em;
-    }
-}
-
-.btn-default {
-    background-color: $default-green-color;
-    color: white;
-    width: 100%;
-}
-
-.error-text {
-    color: red;
-    text-align: center;
-    font-size: 18px
-}
-
-input.ng-invalid.ng-touched {
-    border-color: red;
-}
-
 iq-stacked-bar-chart {
     width: 100%;
     height: 100%;
+}
+
+.green {
+    color: $default-green;
+}
+
+.gold {
+    color: $default-gold;
+}
+
+.grey {
+    color: $default-grey;
+}
+
+.small {
+    font-size: .6em;
+}
+
+.align-middle {
+    vertical-align: middle;
+}
+
+.ksa {
+    padding-left: 10px;
+    padding-bottom: 10px;
 }
 
 @media (max-width: 480px) {}

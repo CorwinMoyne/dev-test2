@@ -96,87 +96,34 @@ nav .search-bar {
   color: #3f93d3;
 }
 
-.communities-header {
-  padding: 20px;
-  background-color: #eaeaea;
-  margin-bottom: 20px;
-}
-.communities-header .header-logo {
-  text-align: center;
-}
-.communities-header .dropdown-container {
-  text-align: center;
-}
-
-.filter {
-  margin-bottom: 20px;
-}
-.filter .letters {
-  text-align: center;
-}
-.filter .letters .selected {
-  background-color: #3f93d3;
-  color: white;
-  border-radius: 50%;
-}
-.filter .letter {
-  font-size: 1.2em;
-  cursor: pointer;
-  display: inline-block;
-  padding-right: 20px;
-  color: lightgray;
-}
-.filter .plane {
-  text-align: center;
-}
-
-.person {
-  padding: 15px;
-  display: flex;
-}
-.person .image {
-  width: 48px;
-  height: 48px;
-  position: absolute;
-}
-.person .main {
-  z-index: 0;
-}
-.person .overlay {
-  z-index: 3;
-}
-.person .border {
-  border: 2px solid #198074;
-}
-.person .info {
-  margin: 5px 0px 0px 60px;
-}
-.person .name {
-  color: #3f93d3;
-}
-.person .email {
-  font-size: .8em;
-}
-
-.btn-default {
-  background-color: #198074;
-  color: white;
-  width: 100%;
-}
-
-.error-text {
-  color: red;
-  text-align: center;
-  font-size: 18px;
-}
-
-input.ng-invalid.ng-touched {
-  border-color: red;
-}
-
 iq-stacked-bar-chart {
   width: 100%;
   height: 100%;
+}
+
+.green {
+  color: #1d8074;
+}
+
+.gold {
+  color: #e0e76f;
+}
+
+.grey {
+  color: #e0e2e0;
+}
+
+.small {
+  font-size: .6em;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
+.ksa {
+  padding-left: 10px;
+  padding-bottom: 10px;
 }
 
 @media (max-width: 991px) {
