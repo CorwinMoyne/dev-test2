@@ -7,11 +7,19 @@ module app.charts {
         restrict: string = 'E';
         scope: any = {
             data: '=',
-            title: '=?'
+            labelKey: '=',
+            marginLeft: '=',
+            selector: '=',
+            title: '=',
+            showAxis: '=?'
         };
         link: ng.IDirectiveLinkFn = (scope: ng.IScope, element: any) => {
             let data = scope['data'];
+            let labelKey = scope['labelKey'];
+            let marginLeft = parseInt(scope['marginLeft']);
             let title = scope['title'];
+            let selector = '#' + scope['selector'];
+            let showAxis = scope['showAxis'];
             let colours = ['#1d8074', '#e0e76f', '#e0e2e0'];
             let types = ['sharedProficient', 'sharedNeedsmore', 'needs'];
             let layers = d3.layout.stack()(types.map((type) => {
@@ -19,17 +27,32 @@ module app.charts {
                     return { x: i, y: d[type] };
                 });
             }));
-            let margin = { top: 80, right: 10, bottom: 20, left: 50 };
+            let margin = { top: 80, right: 10, bottom: 20 };
             let yGroupMax = d3.max(layers, (layer) => { return d3.max(layer, (d) => { return d.y; }); })
             let yStackMax = d3.max(layers, (layer) => { return d3.max(layer, (d) => { return d.y0 + d.y; }); });
-            let labels = data.map((d) => { return d.jobFamily; });
+            let labels = data.map((d) => {
+                let key = d[labelKey];
+                if (!!d['jobPayGrade']) {
+                    key += ' ' + d['jobPayGrade'];
+                }
+                return key;
+            });
 
             draw();
 
             function draw(): void {
-                d3.selectAll("iq-stacked-bar-chart > *").remove();
-                let width = 622 - margin.left - margin.right;
+                // d3.selectAll("iq-stacked-bar-chart > *").remove();
+                // console.log(parseInt(d3.select(selector).style('width'), 10));
+                let margin = { top: 10, right: 10, bottom: 10, left: 200 };
+                let width = parseInt(d3.select(selector).style('width'), 10) - marginLeft - margin.right;
                 let height = 533 - margin.top - margin.bottom;
+
+                var y = d3.scale.ordinal()
+                    .domain(labels)
+                    .rangePoints([0, height]);
+
+
+
 
                 let yScale = d3.scale.ordinal()
                     .domain(d3.range(data.length))
@@ -37,26 +60,39 @@ module app.charts {
 
                 let xScale = d3.scale.linear()
                     .domain([0, yStackMax])
-                    .range([0, width / 2]);
+                    .range([0, width]);
+
+                // console.log(yScale(3));
+                console.log(y.range());
+
+                // console.log(y(labels[4]));
+
+
+
+
+                var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
                 let svg = d3.select(element[0])
                     .append('svg')
-                    .attr('width', '100%')
+                    .attr('width', width + marginLeft + margin.right)
                     .attr('height', height + margin.top + margin.bottom)
-                    .attr('class', 'title');
+                    .attr('class', 'title')
+                    .attr("transform", "translate(" + marginLeft + "," + margin.top + ")");
 
-                svg.selectAll('.title')
-                    .data(title)
-                    .enter()
-                    .append('text')
-                    .text(title)
-                    .attr({
-                        'text-anchor': 'start',
-                        'y': 10,
-                        'x': 0
-                    })
-                    .style('fill', 'grey')
-                    .style('font-weight', 'bold');
+                if (!!title) {
+                    svg.selectAll('.title')
+                        .data(title)
+                        .enter()
+                        .append('text')
+                        .text(title)
+                        .attr({
+                            'text-anchor': 'start',
+                            'y': 10,
+                            'x': 0
+                        })
+                        .style('fill', 'grey')
+                        .style('font-weight', 'bold');
+                }
 
                 let layer = svg.selectAll('.layer')
                     .data(layers)
@@ -96,6 +132,29 @@ module app.charts {
                         },
                         'x': (d) => { return xScale(d.y0); }
                     }).style('fill', 'grey');
+
+                if (!!showAxis) {
+                    svg.insert("g", ":first-child")
+                        .attr("class", "axisHorizontal")
+                        .attr("transform", "translate(" + (3) + "," + (height - margin.bottom) + ")")
+                        .call(xAxis);
+                }
+
+
+
+                // bar.append("text")
+                //     .attr("x", x.rangeBand() / 2)
+                //     .attr("y", function (d) { return y(d.value) + 3; })
+                //     .attr("dy", ".75em")
+                //     .text(function (d) { return d.value; });
+
+                // layer.append('text')
+                //     .attr("x", function (d, i) {
+                //         return d;
+                //     })
+                //     .attr("y", function (d, i) { return y(labels[i]); })
+                //     // .attr("dy", ".75em")
+                //     .text(function (d, i) { return labels[i]; });
             }
         };
         static instance(): ng.IDirectiveFactory {

@@ -10,14 +10,17 @@
 						    <option value="technology">Technology</option>
 					    </select>
                     </div>
-                    <div class="form-group">
-                        <!-- <label for="">Job Family</label> -->
-                        <iq-stacked-bar-chart data="vm.jobfamilies.rows" title="'Job Family'"></iq-stacked-bar-chart>
+                    <div class="form-group" id="jobFamily">
+                        <iq-stacked-bar-chart data="vm.jobfamilies.rows" label-key="'jobFamily'" margin-left="'10'" selector="'jobFamily'" title="'Job Family'"></iq-stacked-bar-chart>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
-                center
+                <div class="well">
+                    <div class="form-group" id="jobFor">
+                        <iq-stacked-bar-chart data="vm.jobForJobFamilies.rows" label-key="'jobName'" margin-left="'200'" selector="'jobFor'" show-axis="true"></iq-stacked-bar-chart>
+                    </div>
+                </div>
             </div>
             <div class="col-md-3">
                 right
