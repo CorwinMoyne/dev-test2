@@ -39,8 +39,10 @@ module app.charts {
             });
 
             draw();
+            updateOnResize();
 
             function draw(): void {
+                let svg = d3.select(element[0]).append('svg');
                 let margin = { top: 10, right: 10, bottom: 10, left: 200 };
                 let width = parseInt(d3.select(selector).style('width'), 10) - marginLeft - margin.right;
                 let height = 533 - margin.top - margin.bottom;
@@ -53,29 +55,10 @@ module app.charts {
                     .domain([0, yStackMax])
                     .range([0, width]);
 
-                var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
-
-                let svg = d3.select(element[0])
-                    .append('svg')
-                    .attr('width', width + marginLeft + margin.right)
+                svg.attr('width', width + marginLeft + margin.right)
                     .attr('height', height + margin.top + margin.bottom)
                     .attr('class', 'title')
-                    .attr("transform", "translate(" + marginLeft + "," + margin.top + ")");
-
-                if (!!title) {
-                    svg.selectAll('.title')
-                        .data(title)
-                        .enter()
-                        .append('text')
-                        .text(title)
-                        .attr({
-                            'text-anchor': 'start',
-                            'y': 10,
-                            'x': 0
-                        })
-                        .style('fill', 'grey')
-                        .style('font-weight', 'bold');
-                }
+                    .attr('transform', 'translate(' + marginLeft + ',' + margin.top + ')');
 
                 let layer = svg.selectAll('.layer')
                     .data(layers)
@@ -101,28 +84,6 @@ module app.charts {
                         }
                     });
 
-                // layer.selectAll('text')
-                //     .data(layers[0])
-                //     .enter()
-                //     .append('text')
-                //     .text((d, i) => {
-                //         return labels[i];
-                //     })
-                //     .attr({
-                //         'text-anchor': 'start',
-                //         'y': (d, i) => {
-                //             return yScale(d.x) - 10;
-                //         },
-                //         'x': (d) => { return xScale(d.y0); }
-                //     }).style('fill', 'grey');
-
-                if (!!showAxis) {
-                    svg.insert("g", ":first-child")
-                        .attr("class", "axis-horizontal")
-                        .attr("transform", "translate(" + (3) + "," + (height - margin.bottom) + ")")
-                        .call(xAxis);
-                }
-
                 layer.selectAll('text')
                     .data(layers[0])
                     .enter()
@@ -138,32 +99,35 @@ module app.charts {
                         'x': 0
                     }).style('fill', 'grey');
 
-                // bars.append("rect")
-                //     .attr("class", "bar")
-                //     .attr("y", function (d) {
-                //         return y(d.name);
-                //     })
-                //     .attr("height", y.rangeBand())
-                //     .attr("x", 0)
-                //     .attr("width", function (d) {
-                //         return x(d.value);
-                //     });
+                if (!!title) {
+                    svg.selectAll('.title')
+                        .data(title)
+                        .enter()
+                        .append('text')
+                        .text(title)
+                        .attr({
+                            'text-anchor': 'start',
+                            'y': 10,
+                            'x': 0
+                        })
+                        .style('fill', 'grey')
+                        .style('font-weight', 'bold');
+                }
 
+                if (!!showAxis) {
+                    let xAxis = d3.svg.axis().scale(xScale).orient('bottom');
+                    svg.insert('g', ':first-child')
+                        .attr('class', 'axis-horizontal')
+                        .attr('transform', 'translate(' + (3) + ',' + (height - margin.bottom) + ')')
+                        .call(xAxis);
+                }
+            }
 
-
-                // bar.append("text")
-                //     .attr("x", x.rangeBand() / 2)
-                //     .attr("y", function (d) { return y(d.value) + 3; })
-                //     .attr("dy", ".75em")
-                //     .text(function (d) { return d.value; });
-
-                // layer.append('text')
-                //     .attr("x", function (d, i) {
-                //         return d;
-                //     })
-                //     .attr("y", function (d, i) { return y(labels[i]); })
-                //     // .attr("dy", ".75em")
-                //     .text(function (d, i) { return labels[i]; });
+            function updateOnResize(): void {
+                angular.element(window).bind('resize', () => {
+                    d3.select(selector + ' svg').remove();
+                    draw();
+                });
             }
         };
         static instance(): ng.IDirectiveFactory {

@@ -22,9 +22,10 @@ module app.home {
             public jobfamilies,
             public jobForJobFamilies,
             public pathway) {
-            console.log(this.jobfamilies.rows);
-            console.log(this.jobForJobFamilies.rows);
-
+            // console.log(this.jobfamilies.rows);
+            // console.log(this.jobForJobFamilies.rows);
+            console.log(this.pathway.rows);
+            
         }
 
         title(index: number): string {
