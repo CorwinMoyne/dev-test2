@@ -1,0 +1,108 @@
+{
+    "apiResult": "success",
+    "class": "iq4.model.QueryResult",
+    "itemType": null,
+    "offset": 0,
+    "pageSize": 10,
+    "rowType": null,
+    "rows": [
+        {
+            "class": "iq4.model.Pathway",
+            "distance": 15.0,
+            "id": 3,
+            "steps": [
+                {
+                    "class": "iq4.model.PathwayStep",
+                    "distance": 15.0,
+                    "id": 3,
+                    "jobPayGrade": {
+                        "class": "iq4.model.JobPayGrade",
+                        "job": {
+                            "class": "iq4.model.Job",
+                            "id": 174
+                        },
+                        "payGrade": {
+                            "class": "iq4.model.PayGrade",
+                            "code": "601"
+                        }
+                    },
+                    "seq": 1
+                },
+                {
+                    "class": "iq4.model.PathwayStep",
+                    "distance": 8.06225774829855,
+                    "id": 4,
+                    "jobPayGrade": {
+                        "class": "iq4.model.JobPayGrade",
+                        "job": {
+                            "class": "iq4.model.Job",
+                            "id": 183
+                        },
+                        "payGrade": {
+                            "class": "iq4.model.PayGrade",
+                            "code": "603"
+                        }
+                    },
+                    "seq": 0
+                }
+            ],
+            "target": {
+                "class": "iq4.model.JobPayGrade",
+                "id": 2339,
+                "job": {
+                    "class": "iq4.model.Job",
+                    "id": 174
+                },
+                "payGrade": {
+                    "class": "iq4.model.PayGrade",
+                    "code": "604"
+                }
+            },
+            "user": {
+                "class": "iq4.model.User",
+                "id": 6
+            }
+        },
+        {
+            "class": "iq4.model.Pathway",
+            "distance": 29.29163703175362,
+            "id": 5,
+            "steps": [
+                {
+                    "class": "iq4.model.PathwayStep",
+                    "distance": 29.29163703175362,
+                    "id": 7,
+                    "jobPayGrade": {
+                        "class": "iq4.model.JobPayGrade",
+                        "job": {
+                            "class": "iq4.model.Job",
+                            "id": 185
+                        },
+                        "payGrade": {
+                            "class": "iq4.model.PayGrade",
+                            "code": "601"
+                        }
+                    },
+                    "seq": 0
+                }
+            ],
+            "target": {
+                "class": "iq4.model.JobPayGrade",
+                "id": 2360,
+                "job": {
+                    "class": "iq4.model.Job",
+                    "id": 185
+                },
+                "payGrade": {
+                    "class": "iq4.model.PayGrade",
+                    "code": "601"
+                }
+            },
+            "user": {
+                "class": "iq4.model.User",
+                "id": 6
+            }
+        }
+    ],
+    "totalRows": 4
+}

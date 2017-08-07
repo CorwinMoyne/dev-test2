@@ -10,7 +10,7 @@ module app.home {
             'Role Profiles at or above your paygrade wothin the cybersecurity job family'
         ];
         businessUnit: string = 'technology';
-        
+
         static $inject = [
             'allJobs',
             'jobfamilies',
@@ -21,13 +21,13 @@ module app.home {
             public allJobs,
             public jobfamilies,
             public jobForJobFamilies,
-            public pathway) {
-            // console.log(this.jobfamilies.rows);
-            // console.log(this.jobForJobFamilies.rows);
-            console.log(this.pathway.rows);
-            
-        }
+            public pathway) { }
 
+        /**
+         * returns the title to be used in iq-stacked-bar-chart
+         * @param  {number} index
+         * @returns string
+         */
         title(index: number): string {
             return this.titles[index];
         }

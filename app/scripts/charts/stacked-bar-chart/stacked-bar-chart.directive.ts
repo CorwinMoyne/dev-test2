@@ -8,7 +8,6 @@ module app.charts {
         scope: any = {
             data: '=',
             labelKey: '=',
-            marginLeft: '=',
             selector: '=',
             title: '=',
             showAxis: '=?'
@@ -16,7 +15,6 @@ module app.charts {
         link: ng.IDirectiveLinkFn = (scope: ng.IScope, element: any) => {
             let data = scope['data'];
             let labelKey = scope['labelKey'];
-            let marginLeft = parseInt(scope['marginLeft']);
             let title = scope['title'];
             let selector = '#' + scope['selector'];
             let showAxis = scope['showAxis'];
@@ -43,8 +41,8 @@ module app.charts {
 
             function draw(): void {
                 let svg = d3.select(element[0]).append('svg');
-                let margin = { top: 10, right: 10, bottom: 10, left: 200 };
-                let width = parseInt(d3.select(selector).style('width'), 10) - marginLeft - margin.right;
+                let margin = { top: 10, right: 10, bottom: 10, left: 10 };
+                let width = parseInt(d3.select(selector).style('width'), 10) - margin.left - margin.right;
                 let height = 533 - margin.top - margin.bottom;
 
                 let yScale = d3.scale.ordinal()
@@ -55,10 +53,10 @@ module app.charts {
                     .domain([0, yStackMax])
                     .range([0, width]);
 
-                svg.attr('width', width + marginLeft + margin.right)
+                svg.attr('width', width + margin.left + margin.right)
                     .attr('height', height + margin.top + margin.bottom)
                     .attr('class', 'title')
-                    .attr('transform', 'translate(' + marginLeft + ',' + margin.top + ')');
+                    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
                 let layer = svg.selectAll('.layer')
                     .data(layers)

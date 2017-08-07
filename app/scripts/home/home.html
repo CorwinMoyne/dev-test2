@@ -13,7 +13,7 @@
                         </div>
                     </div>
                     <div class="form-group" id="jobFamily">
-                        <iq-stacked-bar-chart data="vm.jobfamilies.rows" label-key="'jobFamily'" margin-left="'10'" selector="'jobFamily'" title="vm.title(0)"></iq-stacked-bar-chart>
+                        <iq-stacked-bar-chart data="vm.jobfamilies.rows" label-key="'jobFamily'" selector="'jobFamily'" title="vm.title(0)"></iq-stacked-bar-chart>
                     </div>
                 </div>
             </div>
@@ -22,26 +22,10 @@
                     <div class="panel-body">
                         <div class="form-group" id="jobFor">
                             <h4>Cybersecurity</h4>
-                            <iq-stacked-bar-chart data="vm.jobForJobFamilies.rows" label-key="'jobName'" margin-left="'10'" selector="'jobFor'" title="vm.title(1)" show-axis="true"></iq-stacked-bar-chart>
+                            <iq-stacked-bar-chart data="vm.jobForJobFamilies.rows" label-key="'jobName'" selector="'jobFor'" title="vm.title(1)" show-axis="true"></iq-stacked-bar-chart>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <iq-donut-chart></iq-donut-chart>
-                        </div>
-                    </div>
-                    <div class="form-group">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Legend</h3>
@@ -54,25 +38,34 @@
                             </span>
                         </div>
                         <div class="ksa">
-                            This is many KSAs (Knowledge, Skills & Abilities) you have in common with the role you are looking at where your proficiency level is below the required proficiancy level for that role.
+                            This is many KSAs (Knowledge, Skills & Abilities) you have in common with the role you are looking at where your proficiency level meets or exceeds the required proficiancy level for that role.
                         </div>
                         <div>
                             <i class="fa fa-circle gold small align-middle" aria-hidden="true"></i>
                             <span>
-                                <label>Shared KSAs at proficiency</label>
+                                <label>Shared KSAs requiring proficiency</label>
                             </span>
                         </div>
                         <div class="ksa">
-                            This is many KSAs (Knowledge, Skills & Abilities) you have in common with the role you are looking at where your proficiency level meets or exceeds the required proficiancy level for that role.
+                            This is many KSAs (Knowledge, Skills & Abilities) you have in common with the role you are looking at where your proficiency level is below the required proficiancy level for that role.
                         </div>
                         <div>
                             <i class="fa fa-circle grey small align-middle" aria-hidden="true"></i>
                             <span>
-                                <label>Shared KSAs at proficiency</label>
+                                <label>New KSAs requiring development</label>
                             </span>
                         </div>
                         <div class="ksa">
                             This is many KSAs (Knowledge, Skills & Abilities) required by the role you do not have yet.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group" id="path">
+                            <iq-path-chart data="vm.pathway.rows" all-jobs="vm.allJobs.rows" selector="'path'"></iq-path-chart>
                         </div>
                     </div>
                 </div>

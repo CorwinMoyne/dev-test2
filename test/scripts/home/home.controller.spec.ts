@@ -7,19 +7,27 @@ module app.home {
 
     describe('Home Controller', () => {
 
-        // var controller: app.home.HomeController;
+        var controller: app.home.HomeController;
 
-        // beforeEach(() => {
-        //     angular.mock.module('app');
-        //     angular.mock.inject([
-        //         '$controller', (
-        //             $controller: ng.IControllerService) => {
-        //             controller = $controller('app.home.HomeController', {});
-        //         }]);
-        // });
+        beforeEach(() => {
+            angular.mock.module('app');
+            angular.mock.inject([
+                '$controller', (
+                    $controller: ng.IControllerService) => {
+                    controller = $controller('app.home.HomeController', {
+                        'allJobs': {},
+                        'jobfamilies': {},
+                        'jobForJobFamilies': {},
+                        'pathway': {}
+                    });
+                }]);
+        });
 
-        // it('should', () => {
-        //     expect(true).toBeTruthy();
-        // });
+        fit('should return title', () => {
+            let title = controller.title(0);
+            expect(title).toBe('Job Family');
+            title = controller.title(1)
+            expect(title).toBe('Role Profiles at or above your paygrade wothin the cybersecurity job family');
+        });
     });
 }
