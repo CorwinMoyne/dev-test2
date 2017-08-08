@@ -42,7 +42,8 @@ module app.charts {
             function draw(): void {
                 let svg = d3.select(element[0]).append('svg');
                 let margin = { top: 10, right: 10, bottom: 10, left: 10 };
-                let width = parseInt(d3.select(selector).style('width'), 10) - margin.left - margin.right;
+                let parentWidth = element[0].parentElement.clientWidth;
+                let width = parentWidth - margin.left - margin.right;
                 let height = 533 - margin.top - margin.bottom;
 
                 let yScale = d3.scale.ordinal()

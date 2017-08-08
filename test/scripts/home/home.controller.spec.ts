@@ -23,7 +23,7 @@ module app.home {
                 }]);
         });
 
-        fit('should return title', () => {
+        it('should return title', () => {
             let title = controller.title(0);
             expect(title).toBe('Job Family');
             title = controller.title(1)

@@ -9,7 +9,7 @@ module app.charts {
             allJobs: '=',
             selector: '='
         };
-        link: ng.IDirectiveLinkFn = (scope: ng.IScope, element: any) => {
+        link: ng.IDirectiveLinkFn = (scope: ng.IScope, element: ng.IAugmentedJQuery) => {
             let data = scope['data'];
             let allJobs = scope['allJobs'];
             let selector = '#' + scope['selector'];
@@ -19,9 +19,10 @@ module app.charts {
             draw();
             updateOnResize();
             function draw(): void {
-                let svg = d3.select(element[0]).append('svg');
+                let svg = d3.select(element[0]).append('svg');                
                 let margin = { top: 10, right: 10, bottom: 10, left: 10 };
-                let width = parseInt(d3.select(selector).style('width'), 10) - margin.left - margin.right;
+                let parentWidth = element[0].parentElement.clientWidth;
+                let width = parentWidth - margin.left - margin.right;
                 let height = 533 - margin.top - margin.bottom;
                 let userId = data[0].user.id;
                 let name;

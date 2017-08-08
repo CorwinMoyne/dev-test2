@@ -8,7 +8,8 @@ module.exports = function(config) {
 
     config.set({
         // enable / disable watching file and executing tests whenever any file changes
-        autoWatch: false,
+        autoWatch: true,
+        usePolling: true,
 
         // base path, that will be used to resolve files and exclude
         basePath: '../',
@@ -66,7 +67,7 @@ module.exports = function(config) {
         // - PhantomJS
         // - IE (only Windows)
         browsers: [
-            "PhantomJS",
+            // "PhantomJS",
             "Chrome"
         ],
 
@@ -79,7 +80,7 @@ module.exports = function(config) {
 
         // Continuous Integration mode
         // if true, it capture browsers, run tests and exit
-        singleRun: true,
+        singleRun: false,
 
         colors: true,
 
