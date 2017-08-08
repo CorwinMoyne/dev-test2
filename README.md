@@ -5,7 +5,7 @@ Clone Project
 
 Run the following three commands after cloning:
 
-(You will need to install Grunt globally - npm i grunt-cli -g)
+(You will need to install Grunt globally - npm i grunt-cli -g and TSD npm install tsd -g)
 
 - bower install
 - npm install
