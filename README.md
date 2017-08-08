@@ -5,7 +5,7 @@ Clone Project
 
 Run the following three commands after cloning:
 
-(You will need to install Grunt globally - npm i grunt-cli -g)
+(You will need to install Grunt globally - npm i grunt-cli -g and TSD npm install tsd -g)
 
 - bower install
 - npm install
@@ -18,9 +18,7 @@ grunt serve
 *If you get the following error when you run grunt serve:
 error TS2305: Module 'angular' has no exported member 'ui'
 
-add this line above //grunt-start
-
-/// <reference path="./tsd.d.ts" />
+you will need to reference ./tsd.d.ts above //grunt-start
 
 To run tests:
 ===============
