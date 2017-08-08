@@ -18,11 +18,7 @@ grunt serve
 *If you get the following error when you run grunt serve:
 error TS2305: Module 'angular' has no exported member 'ui'
 
-add this line above //grunt-start
-
-/// <refe>
-
-- /// <reference path="./tsd.d.ts" />'
+you will need to reference ./tsd.d.ts above //grunt-start
 
 To run tests:
 ===============
