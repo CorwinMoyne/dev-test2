@@ -20,7 +20,9 @@ error TS2305: Module 'angular' has no exported member 'ui'
 
 add this line above //grunt-start
 
-'/// <reference path="./tsd.d.ts" />' (without the quotes)
+/// <refe>
+
+- /// <reference path="./tsd.d.ts" />'
 
 To run tests:
 ===============
